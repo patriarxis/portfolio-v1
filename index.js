@@ -35,7 +35,6 @@ function scrollToTargetAdjusted( element ) {
     });
 }
 
-
 root.addEventListener("scroll", () => {
 
     var scrolled = root.scrollTop;
@@ -50,3 +49,10 @@ root.addEventListener("scroll", () => {
     }
 });
 
+let projects = document.querySelectorAll(".project-header");
+
+projects.forEach((project) => {
+    project.addEventListener("click", () => {
+        project.parentNode.classList.toggle("open");
+    })
+})

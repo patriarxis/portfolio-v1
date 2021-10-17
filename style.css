@@ -83,7 +83,7 @@
     font-weight: 400;
 }
 
-.paragraph-2-bold {
+.f-paragraph-2-bold {
     font-family: var(--font-paragraph);
     font-size: 14px;
     font-weight: 700;
@@ -363,19 +363,22 @@ html, body {
 
 .projects {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     row-gap: 8px;
     width: 100%;
 }
 
 .project {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
-    column-gap: 32px;
-    width: 50%;
+    width: 100%;
     transition: .3s ease-in-out;
+    user-select: none;
+}
+
+.project.content {
+    padding: 0;
 }
 
 .project-header {
@@ -384,28 +387,81 @@ html, body {
     justify-content: space-between;
     align-items: center;
     width: 100%;
+    padding: 32px;
+    cursor: pointer;
 }
 
-.projects .left {
+.project .info {
     display: flex;
     flex-direction: column;
     row-gap: 16px;
 }
 
-.projects .right img {
-    width: 24px;
-    height: 24px;
+.project .arrow {
+    padding: 4px;
+    border: 2px solid var(--light300);
+    border-radius: 32px;
+    transition: .3s ease-in-out;
 }
 
-.projects .description {
+.project-header:hover .arrow {
+    background-color: var(--light300);
+}
+
+.project .arrow svg {
+    fill: var(--light);
+    width: 24px;
+    height: 24px;
+    transition: .3s ease-in-out;
+}
+
+.open .arrow svg {
+    transform: rotate(180deg);
+}
+
+.project .description {
     color: var(--light100);
 }
 
-.projects .role {
+.project .role {
     color: var(--light200);
 }
 
+.project .details {
+    display: none;
+    flex-direction: column;
+    row-gap: 16px;
+    width: 100%;
+    padding: 32px;
+}
 
+.details p {
+    color: var(--light);
+    width: 100%;
+    text-align: left;
+}
+
+.link-to-project {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    column-gap: 16px;
+    width: max-content;
+}
+
+.link-to-project img {
+    width: 16px;
+    height: 16px;
+}
+
+.open.project {
+    background-color: var(--light400);
+    border-color: var(--light400);
+}
+
+.open .details {
+    display: flex;
+}
 
 
 
@@ -429,7 +485,7 @@ html, body {
     height: 100%;
     display: flex;
     flex-direction: column;
-    row-gap: 8px;
+    row-gap: 4px;
 }
 
 .nav-list-item {
