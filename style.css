@@ -1,5 +1,5 @@
 :root {
-    --font-heading: 'Modak', sans-serif;
+    --font-heading: 'Oi', sans-serif;
     --font-paragraph: 'Source Code Pro', sans-serif;
 }
 
@@ -36,7 +36,7 @@
 
 .f-display {
     font-family: var(--font-heading);
-    font-size: 64px;
+    font-size: 48px;
     font-weight: 400;
 }
 
