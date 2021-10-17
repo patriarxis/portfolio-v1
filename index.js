@@ -18,24 +18,35 @@ i = 0;
 
 sectionItems.forEach((element) => {
     navListItems[i].addEventListener('click', function () {
-        element.scrollIntoView();
+        scrollToTargetAdjusted(element);
     });
 
     i++;
 });
 
+function scrollToTargetAdjusted( element ) {
+    var headerOffset = 100;
+    var elementPosition = element.offsetTop;
+    console.log(elementPosition);
+    var offsetPosition = elementPosition - headerOffset;
+
+    root.scrollTo({
+        top: offsetPosition
+    });
+}
+
 
 root.addEventListener("scroll", () => {
 
     var scrolled = root.scrollTop;
+    var offset = 120;
 
-    console.log(scrolled);
-
-    for (var i = 0; i < 6; i++) {
-        if (scrolled > sectionItems[i].offsetTop - 60 && (i == 5 || scrolled < sectionItems[i + 1].offsetTop - 60)) {
+    for (var i = 0; i < navListItems.length; i++) {
+        if (scrolled > sectionItems[i].offsetTop - offset && (i == navListItems.length - 1  || scrolled < sectionItems[i + 1].offsetTop - offset)) {
             navListItems[i].classList.add('active');
         } else {
             navListItems[i].classList.remove('active');
         }
     }
 });
+
