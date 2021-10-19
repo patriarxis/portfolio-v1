@@ -187,6 +187,7 @@
     padding: 0;
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
 }
 
 ul, li {
@@ -228,6 +229,7 @@ html, body {
     overflow-x: hidden;
     scroll-behavior: smooth;
     transition: .2s ease-in-out;
+    position: relative;
 }
 
 .app {
@@ -374,6 +376,7 @@ html, body {
     justify-content: space-between;
     column-gap: 16px;
     width: 100%;
+    overflow-y: auto;
 }
 
 .skills h3 {
@@ -416,6 +419,7 @@ html, body {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    column-gap: 16px;
     align-items: center;
     width: 100%;
     padding: var(--space-big);
@@ -429,6 +433,10 @@ html, body {
 }
 
 .project .arrow {
+    width: 36px;
+    height: 36px;
+    min-width: 36px;
+    min-height: 36px;
     padding: 4px;
     border: 2px solid var(--light300);
     border-radius: 32px;
@@ -441,8 +449,8 @@ html, body {
 
 .project .arrow svg {
     fill: var(--light);
-    width: 24px;
-    height: 24px;
+    width: 100%;
+    height: 100%;
     transition: .3s ease-in-out;
 }
 
@@ -461,13 +469,14 @@ html, body {
 .project .details {
     display: none;
     flex-direction: column;
-    row-gap: 16px;
+    row-gap: 24px;
     width: 100%;
     padding: var(--space-big);
+    padding-top: 0;
 }
 
 .details p {
-    color: var(--light);
+    color: var(--light200);
     width: 100%;
     text-align: left;
 }
@@ -476,13 +485,31 @@ html, body {
     display: flex;
     flex-direction: row;
     align-items: center;
-    column-gap: 16px;
+    column-gap: 8px;
     width: max-content;
 }
 
-.link-to-project img {
-    width: 16px;
-    height: 16px;
+.link-to-project > * {
+    transition: .2s ease-in-out;
+}
+
+.link-to-project a {
+    color: #4278ff;
+}
+
+.link-to-project svg {
+    width: 12px;
+    height: 12px;
+    fill: #4278ff;
+    opacity: 0;
+}
+
+.link-to-project a:hover {
+    text-decoration: underline;
+}
+
+.link-to-project a:hover + svg {
+    opacity: 1;
 }
 
 .open.project {
@@ -673,10 +700,15 @@ html, body {
         border-color: var(--light300);
     }
 
-    .nav-header .arrow svg {
-        fill: var(--light);
+    .nav-header .arrow {
         width: 24px;
         height: 24px;
+    }
+
+    .nav-header .arrow svg {
+        fill: var(--light);
+        width: 100%;
+        height: 100%;
         transition: .3s ease-in-out;
     }
 
@@ -723,6 +755,14 @@ html, body {
     }
 
 
+    .project .arrow {
+        width: 28px;
+        height: 28px;
+        min-width: 28px;
+        min-height: 28px;
+        padding: 4px;
+    }
+
 
 
     .nav {
@@ -744,6 +784,7 @@ html, body {
 
     .header-buttons {
         margin-top: 8px;
+        column-gap: 8px;
     }
 
     .profile-pic {
