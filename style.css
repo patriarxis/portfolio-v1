@@ -77,6 +77,7 @@
     font-family: var(--font-paragraph);
     font-size: 1rem;
     font-weight: 700;
+    line-height: 1.4;
 }
 
 .f-paragraph-1 {
@@ -118,15 +119,19 @@
 }
 
 .primary-button-icon svg {
-    width: 20px;
-    height: 20px;
-    border: 2px solid var(--light);
-    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    fill: var(--light);
 }
 
 .primary-button-icon:hover, .secondary-button:hover {
     background-color: var(--light300);
     border-color: var(--light300);
+}
+
+.primary-button-icon:active, .secondary-button:active {
+    background-color: var(--light200);
+    border-color: var(--light200);
 }
 
 .secondary-button {
@@ -188,6 +193,11 @@
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
     -webkit-tap-highlight-color: transparent;
+    transition: .3s ease-in-out;
+}
+
+*:focus, *:focus-within, *:focus-visible, *:active{
+    outline: none;
 }
 
 ul, li {
@@ -228,7 +238,6 @@ html, body {
     overflow-y: auto;
     overflow-x: hidden;
     scroll-behavior: smooth;
-    transition: .2s ease-in-out;
     position: relative;
 }
 
@@ -263,6 +272,11 @@ html, body {
     display: block;
 }
 
+[tabindex]:focus-visible {
+    box-shadow: 0 0 0 4px #4278ff;
+    border-radius: 32px;
+}
+
 
 
 
@@ -284,6 +298,17 @@ html, body {
     width: 100%;
     column-gap: 16px;
     margin-top: 24px;
+}
+
+.theme > * {
+    display: none;
+    flex-direction: row;
+    align-items: center;
+    column-gap: 8px;
+}
+
+.show {
+    display: flex;
 }
 
 .profile-pic {
@@ -311,9 +336,16 @@ html, body {
     column-gap: 24px;
 }
 
+.social-profiles a {
+    width: 28px;
+    height: 28px;
+    padding: 4px;
+    border-radius: 50%;
+}
+
 .social-profiles svg {
-    width: 20px;
-    height: 20px;
+    width: 100%;
+    height: 100%;
     fill: var(--light100);
 }
 
@@ -376,14 +408,13 @@ html, body {
     justify-content: space-between;
     column-gap: 16px;
     width: 100%;
-    overflow-y: auto;
 }
 
 .skills h3 {
     padding: 12px;
     border: 2px solid var(--light300);
     border-radius: 32px;
-    color: var(--light)
+    color: var(--light);
 }
 
 .skills p {
@@ -632,6 +663,7 @@ html, body {
 .circle {
     width: 3px;
     height: 3px;
+    border-radius: 50%;
     background-color: var(--light200);
 }
 
@@ -693,6 +725,7 @@ html, body {
         transition: .3s ease-in-out;
         background-color: var(--light-s-400);
         border-color: var(--light400);
+        cursor: pointer;
     }
 
     .nav-header:hover {
@@ -755,12 +788,29 @@ html, body {
     }
 
 
+    .skills .entry {
+        min-width: 150px;
+    }
+
+    .skills h3 {
+        padding: 8px;
+    }
+
+
+    .project-header .info {
+        row-gap: 8px;
+    }
+
     .project .arrow {
         width: 28px;
         height: 28px;
         min-width: 28px;
         min-height: 28px;
         padding: 4px;
+    }
+
+    .project .details {
+        row-gap: 16px;
     }
 
 
@@ -792,16 +842,24 @@ html, body {
         height: 64px;
     }
 
+    .nickname {
+        padding: 8px;
+    }
+
     .primary-button-icon {
         padding: 8px;
         column-gap: 4px;
     }
 
     .primary-button-icon svg {
-        width: 12px;
-        height: 12px;
+        width: 16px;
+        height: 16px;
+        display: none;
     }
 
+    .secondary-button {
+        padding: 8px;
+    }
 
 
     .personal-info {
@@ -818,6 +876,7 @@ html, body {
 
     .skills {
         column-gap: 8px;
+        overflow-y: auto;
     }
 
 

@@ -1,13 +1,19 @@
-let theme = document.querySelector("#theme")
-let root = document.querySelector(".root")
+let theme = document.querySelector(".theme");
+let darkButton = document.querySelector(".dark-button");
+let lightButton = document.querySelector(".light-button");
+let root = document.querySelector(".root");
 
 theme.addEventListener("click", () => {
     let x = root.classList[1];
     root.classList.remove(x);
     if (x == "dark") {
         root.classList.add("light");
+        darkButton.classList.add("show");
+        lightButton.classList.remove("show");
     } else {
         root.classList.add("dark");
+        darkButton.classList.remove("show");
+        lightButton.classList.add("show");
     }
 })
 
