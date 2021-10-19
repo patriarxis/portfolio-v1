@@ -12,7 +12,6 @@ theme.addEventListener("click", () => {
 })
 
 let navListItems = document.querySelectorAll(".nav .nav-list-item");
-let navDropdownListItems = document.querySelectorAll(".nav-dropdown .nav-list-item");
 let sectionItems = document.querySelectorAll(".section");
 
 i = 0;
@@ -20,19 +19,19 @@ i = 0;
 sectionItems.forEach((section) => {
     navListItems[i].addEventListener('click', function () {
         scrollToTargetAdjusted(section);
-    });
-
-    navDropdownListItems[i].addEventListener('click', function () {
-        scrollToTargetAdjusted(section);
+        closeNav();
     });
 
     i++;
 });
 
 function scrollToTargetAdjusted( element ) {
-    var headerOffset = 100;
+    var headerOffset = 120;
+    // if(window.matchMedia("max-width: 1600px")) {
+    //     headerOffset = navHeader.offsetHeight * 1.5;
+    // }
     var elementPosition = element.offsetTop;
-    console.log(elementPosition);
+    console.log(headerOffset);
     var offsetPosition = elementPosition - headerOffset;
 
     root.scrollTo({
@@ -44,9 +43,11 @@ root.addEventListener("scroll", () => {
 
     var scrolled = root.scrollTop;
     var offset = 120;
+    if(window.matchMedia("max-width: 1600px")) {
+        offset = 120;
+    }
 
     navUpdate(scrolled, offset);
-    navDropdownUpdate(scrolled, offset);
 });
 
 function navUpdate(scrolled, offset) {
@@ -59,16 +60,6 @@ function navUpdate(scrolled, offset) {
     }
 }
 
-function navDropdownUpdate(scrolled, offset) {
-    for (var i = 0; i < navDropdownListItems.length; i++) {
-        if (scrolled > sectionItems[i].offsetTop - offset && (i == navDropdownListItems.length - 1  || scrolled < sectionItems[i + 1].offsetTop - offset)) {
-            navDropdownListItems[i].classList.add('active');
-        } else {
-            navDropdownListItems[i].classList.remove('active');
-        }
-    }
-}
-
 let projects = document.querySelectorAll(".project-header");
 
 projects.forEach((project) => {
@@ -77,6 +68,7 @@ projects.forEach((project) => {
     })
 })
 
+let nav = document.querySelector(".nav");
 let navHeader = document.querySelector(".nav-header");
 let backdrop = document.querySelector(".backdrop");
 
@@ -85,7 +77,7 @@ navHeader.addEventListener("click", () => {
     backdrop.classList.toggle("show-backdrop");
 })
 
-backdrop.addEventListener("click", () => {
+function closeNav() {
     navHeader.parentNode.classList.remove("open-nav");
     backdrop.classList.remove("show-backdrop");
-})
+}

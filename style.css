@@ -45,7 +45,8 @@
 .f-display {
     font-family: var(--font-heading);
     font-size: 3rem;
-    font-weight: 500;
+    font-weight: normal;
+    line-height: 1.4;
 }
 
 .f-header {
@@ -82,7 +83,6 @@
     font-family: var(--font-paragraph);
     font-size: 1rem;
     font-weight: 500;
-    line-height: 1.6;
 }
 
 .f-paragraph-2 {
@@ -107,6 +107,7 @@
 .primary-button-icon {
     display: flex;
     flex-direction: row;
+    align-items: center;
     column-gap: 8px;
     padding: 16px;
     color: var(--light);
@@ -208,7 +209,8 @@ a {
 }
 
 html {
-    font-size: clamp(13px, 2vw, 16px);
+    font-size: clamp(12px, 2vw, 16px);
+    line-height: 1.6;
 }
 
 html, body {
@@ -247,13 +249,12 @@ html, body {
 
 .backdrop {
     display: none;
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     bottom: 0;
     right: 0;
     z-index: 5;
-    background-color: var(--light400);
 }
 
 .show-backdrop {
@@ -308,9 +309,10 @@ html, body {
     column-gap: 24px;
 }
 
-.social-profiles img {
-    width: 24px;
-    height: 24px;
+.social-profiles svg {
+    width: 20px;
+    height: 20px;
+    fill: var(--light100);
 }
 
 
@@ -349,6 +351,7 @@ html, body {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+    column-gap: 16px;
     width: 100%;
 }
 
@@ -496,22 +499,25 @@ html, body {
 
 /* Navigation */
 
-.nav-dropdown {
-    display: none;
-}
-
-.nav {
+.nav-container {
     position: fixed;
     bottom: 0;
     left: 50%;
     transform: translateX(-100%);
     margin-left: -500px;
     user-select: none;
+}
+
+.nav {
     padding: 16px;
     border-radius: 32px 32px 0 0;
     height: 500px;
     width: 300px;
     background-color: var(--light400);
+}
+
+.nav-header {
+    display: none;
 }
 
 .nav-list {
@@ -609,32 +615,44 @@ html, body {
 
 @media screen and (max-width: 1600px) {
     :root {
-        --space-big: 16px;
+        --space-big: 24px;
     }
 
     .container {
-        padding: 0 8px;
+        padding: 0 16px;
     }
 
 
 
+
+    /* Navigation */
+
+    .nav-container {
+        position: sticky;
+        top: 8px;
+        left: 8px;
+        right: 8px;
+        bottom: auto;
+        z-index: 10;
+        background-color: transparent;
+        height: 0;
+        overflow: visible;
+        transform: none;
+        margin-left: 0;
+        margin-bottom: 64px;
+    }
 
     .nav {
-        display: none;
-    }
-
-    .nav-dropdown {
         display: flex;
         flex-direction: column;
         row-gap: 4px;
-        position: sticky;
-        top: 8px;
-        z-index: 10;
-        user-select: none;
+        width: auto;
+        height: auto;
+        margin: 0;
+        transform: none;
         padding: 16px;
         border-radius: 32px;
-        border: 2px solid transparent;
-        transition: .3 ease-in-out;
+        background-color: transparent;
     }
 
     .nav-header {
@@ -662,12 +680,12 @@ html, body {
         transition: .3s ease-in-out;
     }
 
-    .nav-dropdown .nav-list {
+    .nav .nav-list {
         display: none;
     }
 
-    .open-nav.nav-dropdown {
-        background-color: var(--dark);
+    .open-nav.nav {
+        background-color: var(--light-s-400);
         border-color: var(--light400);
     }
 
@@ -677,5 +695,94 @@ html, body {
 
     .open-nav .nav-list {
         display: flex;
+    }
+}
+
+
+
+@media screen and (max-width: 600px) {
+    :root {
+        --space-big: 12px;
+    }
+
+    .container {
+        padding: 0 8px;
+        row-gap: 40px;
+    }
+
+    .section {
+        row-gap: 24px;
+    }
+
+    .section-title {
+        padding: 8px;
+    }
+
+    .f-display {
+        font-size: 2rem;
+    }
+
+
+
+
+    .nav {
+        padding: 8px;
+    }
+
+    .nav-header {
+        padding: 12px;
+    }
+
+    .nav-list-item a {
+        padding: 12px;
+    }
+
+
+    .header {
+        row-gap: 32px;
+    }
+
+    .header-buttons {
+        margin-top: 8px;
+    }
+
+    .profile-pic {
+        width: 64px;
+        height: 64px;
+    }
+
+    .primary-button-icon {
+        padding: 8px;
+        column-gap: 4px;
+    }
+
+    .primary-button-icon svg {
+        width: 12px;
+        height: 12px;
+    }
+
+
+
+    .personal-info {
+        flex-direction: column;
+        row-gap: 8px;
+    }
+
+
+    .entry {
+        row-gap: 8px;
+    }
+
+
+
+    .skills {
+        column-gap: 8px;
+    }
+
+
+
+    .footer {
+        padding: 40px 0;
+        margin-top: 32px;
     }
 }
