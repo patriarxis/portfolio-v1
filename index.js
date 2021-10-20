@@ -23,21 +23,27 @@ let sectionItems = document.querySelectorAll(".section");
 i = 0;
 
 sectionItems.forEach((section) => {
-    navListItems[i].addEventListener('click', function () {
+    navListItems[i].addEventListener('click', (e) => {
         scrollToTargetAdjusted(section);
-        closeNav();
+        e.target.blur();
+        previousFocus = false;
+        section.focus({
+            preventScroll: true
+        });
     });
+
+    navListItems[i].addEventListener("keypress", (e) => {
+        if (e.key === 'Enter') {
+            e.target.click();
+        }
+    })
 
     i++;
 });
 
-function scrollToTargetAdjusted( element ) {
-    var headerOffset = 120;
-    // if(window.matchMedia("max-width: 1600px")) {
-    //     headerOffset = navHeader.offsetHeight * 1.5;
-    // }
+function scrollToTargetAdjusted(element) {
+    var headerOffset = 100;
     var elementPosition = element.offsetTop;
-    console.log(headerOffset);
     var offsetPosition = elementPosition - headerOffset;
 
     root.scrollTo({
@@ -49,7 +55,7 @@ root.addEventListener("scroll", () => {
 
     var scrolled = root.scrollTop;
     var offset = 120;
-    if(window.matchMedia("max-width: 1600px")) {
+    if (window.matchMedia("max-width: 1600px")) {
         offset = 120;
     }
 
@@ -58,7 +64,7 @@ root.addEventListener("scroll", () => {
 
 function navUpdate(scrolled, offset) {
     for (var i = 0; i < navListItems.length; i++) {
-        if (scrolled > sectionItems[i].offsetTop - offset && (i == navListItems.length - 1  || scrolled < sectionItems[i + 1].offsetTop - offset)) {
+        if (scrolled > sectionItems[i].offsetTop - offset && (i == navListItems.length - 1 || scrolled < sectionItems[i + 1].offsetTop - offset)) {
             navListItems[i].classList.add('active');
         } else {
             navListItems[i].classList.remove('active');
@@ -70,20 +76,100 @@ let projects = document.querySelectorAll(".project-header");
 
 projects.forEach((project) => {
     project.addEventListener("click", () => {
-        project.parentNode.classList.toggle("open");
+        project.parentNode.classList.toggle("open-project");
+    })
+
+    project.addEventListener("focusin", () => {
+        project.parentNode.classList.add("open-project");
+    })
+
+    project.addEventListener("keypress", (e) => {
+        if (e.key === 'Enter') {
+            project.parentNode.classList.toggle("open");
+        }
     })
 })
 
 let nav = document.querySelector(".nav");
 let navHeader = document.querySelector(".nav-header");
+let navList = document.querySelector(".nav-list");
 let backdrop = document.querySelector(".backdrop");
+let previousFocus = false;
 
-navHeader.addEventListener("click", () => {
-    navHeader.parentNode.classList.toggle("open-nav");
-    backdrop.classList.toggle("show-backdrop");
+navHeader.addEventListener("focusout", () => {
+    previousFocus = false;
 })
 
-function closeNav() {
-    navHeader.parentNode.classList.remove("open-nav");
-    backdrop.classList.remove("show-backdrop");
+navHeader.addEventListener("click", (e) => {
+    console.log(previousFocus)
+    if (previousFocus) {
+        e.target.blur();
+        previousFocus = false;
+    } else {
+        previousFocus = true;
+    }
+})
+
+navHeader.addEventListener("keypress", (e) => {
+    if (e.key === 'Enter') {
+        navHeader.click();
+    }
+})
+
+let arrowIndex = 0;
+
+navHeader.addEventListener("focusin", () => {
+    arrowIndex = navHeader.getAttribute("aria-arrow-index");
+})
+
+navListItems.forEach((listItem) => {
+    listItem.addEventListener("focusin", () => {
+        arrowIndex = listItem.getAttribute("aria-arrow-index");
+    })
+})
+
+navHeader.addEventListener("keydown", (e) => { moveArrow(e) });
+navList.addEventListener("keydown", (e) => { moveArrow(e) });
+
+function moveArrow(e) {
+    if (e.keyCode == 38) {
+        e.preventDefault();
+        if (updateIndex(arrowIndex, '-') == 0) {
+            navHeader.focus();
+        } else {
+            navListItems[updateIndex(arrowIndex, '-') - 1].firstChild.focus();
+        }
+    }
+    if (e.keyCode == 40) {
+        e.preventDefault();
+        if (updateIndex(arrowIndex, '+') == 0) {
+            navHeader.focus();
+        } else {
+            navListItems[updateIndex(arrowIndex, '+') - 1].firstChild.focus();
+        }
+    }
 }
+
+function updateIndex(x, op) {
+    let top = navListItems.length + 1;
+
+    if (op === '-') {
+        if ((x = --x % top) < 0) {
+            x = navListItems.length;
+        }
+    } else {
+        x = ++x % top;
+    }
+    return x;
+}
+
+document.addEventListener("keypress", (e) => {
+    e.preventDefault();
+    if (e.key === '/' && previousFocus) {
+        navHeader.blur();
+        previousFocus = false;
+    } else if (e.key === '/') {
+        navHeader.focus();
+        previousFocus = true;
+    }
+})

@@ -18,7 +18,6 @@
 
     <div class="root dark">
         <div class="app">
-            <div class="backdrop"></div>
             <div class="container">
                 <section class="header">
 
@@ -103,8 +102,36 @@
                 </section>
                 <nav class="nav-container">
                     <div class="nav">
-                        <div class="nav-header" tabindex="0">
-                            <p class="f-nav">Sections</p>
+                        <div class="nav-header" aria-arrow-index="0" tabindex="0">
+                            <div class="test">
+                                <p class="f-nav">Sections</p>
+                                <div class="hotkeys">
+                                    <div class="slash">
+                                        <p class="f-paragraph-3">open with</p>
+                                        <svg viewBox="0 0 24 24">
+                                            <path
+                                                d="M16.52,4.65A1,1,0,0,0,15.15,5l-8,13a1,1,0,0,0,.33,1.37A1,1,0,0,0,8,19.5,1,1,0,0,0,8.85,19l8-13A1,1,0,0,0,16.52,4.65Z" />
+                                            <path
+                                                d="M18,0H6A6,6,0,0,0,0,6V18a6,6,0,0,0,6,6H18a6,6,0,0,0,6-6V6A6,6,0,0,0,18,0Zm4,18a4,4,0,0,1-4,4H6a4,4,0,0,1-4-4V6A4,4,0,0,1,6,2H18a4,4,0,0,1,4,4Z" />
+                                        </svg>
+                                    </div>
+                                    <div class="arrows">
+                                        <p class="f-paragraph-4">navigate with</p>
+                                        <svg viewBox="0 0 24 24">
+                                            <path
+                                                d="M18,0H6A6,6,0,0,0,0,6V18a6,6,0,0,0,6,6H18a6,6,0,0,0,6-6V6A6,6,0,0,0,18,0Zm4,18a4,4,0,0,1-4,4H6a4,4,0,0,1-4-4V6A4,4,0,0,1,6,2H18a4,4,0,0,1,4,4Z" />
+                                            <path
+                                                d="M12.71,5.29a1,1,0,0,0-.33-.21,1,1,0,0,0-.76,0,1,1,0,0,0-.33.21l-4,4a1,1,0,1,0,1.42,1.42L11,8.41V18a1,1,0,0,0,2,0V8.41l2.29,2.3a1,1,0,0,0,1.42,0,1,1,0,0,0,0-1.42Z" />
+                                        </svg>
+                                        <svg viewBox="0 0 24 24">
+                                            <path
+                                                d="M6,24H18a6,6,0,0,0,6-6V6a6,6,0,0,0-6-6H6A6,6,0,0,0,0,6V18A6,6,0,0,0,6,24ZM2,6A4,4,0,0,1,6,2H18a4,4,0,0,1,4,4V18a4,4,0,0,1-4,4H6a4,4,0,0,1-4-4Z" />
+                                            <path
+                                                d="M11.29,18.71a1,1,0,0,0,.33.21,1,1,0,0,0,.76,0,1,1,0,0,0,.33-.21l4-4a1,1,0,0,0-1.42-1.42L13,15.59V6a1,1,0,0,0-2,0v9.59l-2.29-2.3a1,1,0,0,0-1.42,0,1,1,0,0,0,0,1.42Z" />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
                             <div class="arrow">
                                 <svg viewBox="0 0 24 24">
                                     <path
@@ -113,16 +140,16 @@
                             </div>
                         </div>
                         <ul class="nav-list">
-                            <li class="nav-list-item f-nav"><a tabindex="0">Personal Info</a></li>
-                            <li class="nav-list-item f-nav"><a tabindex="0">Experience</a></li>
-                            <li class="nav-list-item f-nav"><a tabindex="0">Education</a></li>
-                            <li class="nav-list-item f-nav"><a tabindex="0">Certificates</a></li>
-                            <li class="nav-list-item f-nav"><a tabindex="0">Skills</a></li>
-                            <li class="nav-list-item f-nav"><a tabindex="0">Projects</a></li>
+                            <li class="nav-list-item f-nav" aria-arrow-index="1"><a tabindex="0">Personal Info</a></li>
+                            <li class="nav-list-item f-nav" aria-arrow-index="2"><a tabindex="0">Experience</a></li>
+                            <li class="nav-list-item f-nav" aria-arrow-index="3"><a tabindex="0">Education</a></li>
+                            <li class="nav-list-item f-nav" aria-arrow-index="4"><a tabindex="0">Certificates</a></li>
+                            <li class="nav-list-item f-nav" aria-arrow-index="5"><a tabindex="0">Skills</a></li>
+                            <li class="nav-list-item f-nav" aria-arrow-index="6"><a tabindex="0">Projects</a></li>
                         </ul>
                     </div>
                 </nav>
-                <section id="personal-info-container" class="section">
+                <section id="personal-info-container" class="section" tabindex="-1">
 
                     <h2 class="section-title f-section">Personal Info</h2>
 
@@ -133,7 +160,7 @@
                     </div>
 
                 </section>
-                <section id="experience-container" class="section">
+                <section id="experience-container" class="section" tabindex="-1">
 
                     <h2 class="section-title f-section">Experience</h2>
 
@@ -149,7 +176,7 @@
                         </div>
                     </div>
                 </section>
-                <section id="education-container" class="section">
+                <section id="education-container" class="section" tabindex="-1">
 
                     <h2 class="section-title f-section">Education</h2>
 
@@ -166,7 +193,7 @@
                     </div>
 
                 </section>
-                <section id="certificates-container" class="section">
+                <section id="certificates-container" class="section" tabindex="-1">
 
                     <h2 class="section-title f-section">Certificates</h2>
 
@@ -210,7 +237,7 @@
                     </div>
 
                 </section>
-                <section id="skills-container" class="section">
+                <section id="skills-container" class="section" tabindex="-1">
 
                     <h2 class="section-title f-section">Skills</h2>
 
@@ -246,7 +273,7 @@
                         </div>
                     </div>
                 </section>
-                <section id="projects-container" class="section">
+                <section id="projects-container" class="section" tabindex="-1">
 
                     <h2 class="section-title f-section">Projects</h2>
 
