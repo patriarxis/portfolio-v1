@@ -2,6 +2,10 @@
     --font-heading: 'Oi', sans-serif;
     --font-paragraph: 'Source Code Pro', sans-serif;
 
+    --blue: rgb(60, 60, 255);
+    --blue100: rgba(60, 60, 255, .2);
+    --blue200: rgba(60, 60, 255, .1);
+
     --space-big: 32px;
 }
 
@@ -105,6 +109,13 @@
     line-height: 1;
 }
 
+.f-paragraph-3-bold {
+    font-family: var(--font-paragraph);
+    font-size: .8rem;
+    font-weight: 700;
+    line-height: 1;
+}
+
 .f-paragraph-4 {
     font-family: var(--font-paragraph);
     font-size: .7rem;
@@ -128,7 +139,7 @@
     color: var(--light);
     border: 2px solid var(--light300);
     border-radius: 64px;
-    transition: .2s ease-in-out;
+    transition: 0.2s ease-in-out;
     user-select: none;
 }
 
@@ -153,7 +164,7 @@
     color: var(--light);
     border: 2px solid var(--light300);
     border-radius: 64px;
-    transition: .2s ease-in-out;
+    transition: 0.2s ease-in-out;
     user-select: none;
 }
 
@@ -184,7 +195,7 @@
 .content {
     padding: var(--space-big);
     border-radius: 24px;
-    transition: .3s ease-in-out;
+    transition: 0.3s ease-in-out;
     border: 2px solid transparent;
 }
 
@@ -207,7 +218,7 @@
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
     -webkit-tap-highlight-color: transparent;
-    transition: .3s ease-in-out;
+    transition: 0.3s ease-in-out;
 }
 
 *:focus, *:focus-within, *:focus-visible, *:active{
@@ -273,7 +284,7 @@ html, body {
 }
 
 [tabindex="0"]:focus-visible {
-    box-shadow: 0 0 0 4px #4278ff;
+    box-shadow: 0 0 0 4px var(--blue100);
     border-radius: 32px;
 }
 
@@ -287,7 +298,7 @@ html, body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    row-gap: 64px;
+    row-gap: 54px;
 }
 
 .header-buttons {
@@ -312,8 +323,9 @@ html, body {
 }
 
 .profile-pic {
-    width: 120px;
-    height: 120px;
+    width: 140px;
+    height: 140px;
+    margin-top: 24px;
 }
 
 .name {
@@ -324,6 +336,7 @@ html, body {
 }
 
 .nickname {
+    margin-top: 16px;
     padding: 16px;
     background-color: var(--light400);
     color: var(--light);
@@ -333,20 +346,35 @@ html, body {
 .social-profiles {
     display: flex;
     flex-direction: row;
-    column-gap: 24px;
+    column-gap: 16px;
 }
 
 .social-profiles a {
-    width: 28px;
-    height: 28px;
-    padding: 4px;
+    width: 44px;
+    height: 44px;
+    padding: 8px;
     border-radius: 50%;
+    border: 2px solid transparent;
 }
 
 .social-profiles svg {
     width: 100%;
     height: 100%;
     fill: var(--light100);
+}
+
+.social-profiles a:hover {
+    background-color: var(--light400);
+    border-color: var(--light400);
+}
+
+.social-profiles a:active {
+    background-color: var(--light300);
+    border-color: var(--light300);
+}
+
+.social-profiles a:hover svg {
+    fill: var(--light);
 }
 
 
@@ -438,7 +466,7 @@ html, body {
     flex-direction: column;
     align-items: center;
     width: 100%;
-    transition: .3s ease-in-out;
+    transition: 0.3s ease-in-out;
     user-select: none;
 }
 
@@ -471,18 +499,19 @@ html, body {
     padding: 4px;
     border: 2px solid var(--light300);
     border-radius: 32px;
-    transition: .3s ease-in-out;
+    transition: 0.3s ease-in-out;
 }
 
 .project-header:hover .arrow {
     background-color: var(--light300);
+    border-color: var(--light300);
 }
 
 .project .arrow svg {
     fill: var(--light);
     width: 100%;
     height: 100%;
-    transition: .3s ease-in-out;
+    transition: 0.3s ease-in-out;
 }
 
 .open .arrow svg {
@@ -521,17 +550,21 @@ html, body {
 }
 
 .link-to-project > * {
-    transition: .2s ease-in-out;
+    transition: 0.2s ease-in-out;
 }
 
 .link-to-project a {
-    color: #4278ff;
+    color: var(--blue);
+    background-color: var(--blue200);
+    border-radius: 32px;
+    padding: 8px;
 }
+
 
 .link-to-project svg {
     width: 12px;
     height: 12px;
-    fill: #4278ff;
+    fill: var(--blue);
     opacity: 0;
 }
 
@@ -539,16 +572,16 @@ html, body {
     text-decoration: underline;
 }
 
-.link-to-project a:hover + svg {
+.link-to-project a:hover + svg, .link-to-project a:focus + svg {
     opacity: 1;
 }
 
-.open-project:focus-within {
+.open-project {
     background-color: var(--light400);
     border-color: var(--light400);
 }
 
-.open-project:focus-within .details {
+.open-project .details {
     display: flex;
 }
 
@@ -597,7 +630,7 @@ html, body {
     color: var(--light200);
     border-radius: 64px;
     border: 2px solid transparent;
-    transition: .3s ease-in-out;
+    transition: 0.3s ease-in-out;
 }
 
 .nav-list-item.active a {
@@ -615,9 +648,19 @@ html, body {
     border-color: var(--light400);
 }
 
+.nav-list-item a:active {
+    background-color: var(--light300);
+    border-color: var(--light300);
+}
+
 .nav-list-item.active a:hover {
     background-color: var(--light300);
     border-color: var(--light300);
+}
+
+.nav-list-item.active a:active {
+    background-color: var(--light200);
+    border-color: var(--light200);
 }
 
 
@@ -724,7 +767,7 @@ html, body {
         padding: 20px;
         border-radius: 64px;
         border: 2px solid transparent;
-        transition: .3s ease-in-out;
+        transition: 0.3s ease-in-out;
         background-color: var(--light-s-400);
         border-color: var(--light400);
         cursor: pointer;
@@ -785,7 +828,7 @@ html, body {
         fill: var(--light);
         width: 100%;
         height: 100%;
-        transition: .3s ease-in-out;
+        transition: 0.3s ease-in-out;
     }
 
     .nav .nav-list {
@@ -829,6 +872,29 @@ html, body {
     .f-display {
         font-size: 2rem;
     }
+
+    .f-header {
+        font-size: 1.4rem;
+    }
+
+
+    .primary-button-icon {
+        padding: 8px;
+        column-gap: 4px;
+    }
+
+    .primary-button-icon svg {
+        width: 16px;
+        height: 16px;
+    }
+
+    .secondary-button {
+        padding: 8px;
+    }
+
+
+
+
 
 
     .skills .entry {
@@ -890,21 +956,6 @@ html, body {
     }
 
     .nickname {
-        padding: 8px;
-    }
-
-    .primary-button-icon {
-        padding: 8px;
-        column-gap: 4px;
-    }
-
-    .primary-button-icon svg {
-        width: 16px;
-        height: 16px;
-        display: none;
-    }
-
-    .secondary-button {
         padding: 8px;
     }
 

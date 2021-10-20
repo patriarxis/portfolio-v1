@@ -17,6 +17,17 @@ theme.addEventListener("click", () => {
     }
 })
 
+let a = document.querySelectorAll("a");
+
+a.forEach((a) => {
+    a.addEventListener("keypress", (e) => {
+        if (e.key === 'Enter') {
+            e.stopImmediatePropagation();
+            a.clicked();
+        }
+    })
+})
+
 let navListItems = document.querySelectorAll(".nav .nav-list-item");
 let sectionItems = document.querySelectorAll(".section");
 
@@ -72,20 +83,19 @@ function navUpdate(scrolled, offset) {
     }
 }
 
-let projects = document.querySelectorAll(".project-header");
+let projectsHeader = document.querySelectorAll(".project-header");
+let projects = document.querySelectorAll(".project");
+
+projectsHeader.forEach((projectHeader) => {
+    projectHeader.addEventListener("click", () => {
+        projectHeader.parentNode.classList.toggle("open-project");
+    })
+})
 
 projects.forEach((project) => {
-    project.addEventListener("click", () => {
-        project.parentNode.classList.toggle("open-project");
-    })
-
-    project.addEventListener("focusin", () => {
-        project.parentNode.classList.add("open-project");
-    })
-
     project.addEventListener("keypress", (e) => {
         if (e.key === 'Enter') {
-            project.parentNode.classList.toggle("open");
+            project.classList.toggle("open-project");
         }
     })
 })
