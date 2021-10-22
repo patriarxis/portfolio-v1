@@ -147,7 +147,7 @@ function moveArrow(e) {
         if (updateIndex(arrowIndex, '-') == 0) {
             navHeader.focus();
         } else {
-            navListItems[updateIndex(arrowIndex, '-') - 1].firstChild.focus();
+            navListItems[updateIndex(arrowIndex, '-') - 1].focus();
         }
     }
     if (e.keyCode == 40) {
@@ -155,7 +155,7 @@ function moveArrow(e) {
         if (updateIndex(arrowIndex, '+') == 0) {
             navHeader.focus();
         } else {
-            navListItems[updateIndex(arrowIndex, '+') - 1].firstChild.focus();
+            navListItems[updateIndex(arrowIndex, '+') - 1].focus();
         }
     }
 }

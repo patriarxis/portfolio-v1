@@ -1,47 +1,41 @@
 :root {
     --font-heading: 'Oi', sans-serif;
     --font-paragraph: 'Source Code Pro', sans-serif;
-
-    --blue: rgb(60, 60, 255);
-    --blue100: rgba(60, 60, 255, .2);
-    --blue200: rgba(60, 60, 255, .1);
-
+    --blue: rgb(44, 117, 255);
+    --blue100: rgba(44, 117, 255, .4);
+    --blue200: rgba(44, 117, 255, .1);
     --space-big: 32px;
 }
 
 .dark {
-    --dark: rgb(0,0,0);
-    --dark100: rgba(0,0,0,.6);
-    --dark200: rgba(0,0,0,.4);
-    --dark300: rgba(0,0,0,.15);
-    --dark400: rgba(0,0,0,.075);
-    --light: rgb(255,255,255);
-    --light100: rgba(255,255,255,.6);
-    --light200: rgba(255,255,255,.4);
-    --light300: rgba(255,255,255,.15);
-    --light400: rgba(255,255,255,.075);
-
+    --dark: rgb(20, 20, 20);
+    --dark100: rgba(0, 0, 0, .6);
+    --dark200: rgba(0, 0, 0, .4);
+    --dark300: rgba(0, 0, 0, .15);
+    --dark400: rgba(0, 0, 0, .075);
+    --light: rgb(255, 255, 255);
+    --light100: rgba(255, 255, 255, .6);
+    --light200: rgba(255, 255, 255, .4);
+    --light300: rgba(255, 255, 255, .15);
+    --light400: rgba(255, 255, 255, .075);
     --light-s-300: #262626;
     --light-s-400: #131313;
 }
 
 .light {
-    --light: rgb(0,0,0);
-    --light100: rgba(0,0,0,.6);
-    --light200: rgba(0,0,0,.4);
-    --light300: rgba(0,0,0,.15);
-    --light400: rgba(0,0,0,.075);
-    --dark: rgb(255,255,255);
-    --dark100: rgba(255,255,255,.6);
-    --dark200: rgba(255,255,255,.4);
-    --dark300: rgba(255,255,255,.15);
-    --dark400: rgba(255,255,255,.075);
-
+    --light: rgb(20, 20, 20);
+    --light100: rgba(0, 0, 0, .6);
+    --light200: rgba(0, 0, 0, .4);
+    --light300: rgba(0, 0, 0, .15);
+    --light400: rgba(0, 0, 0, .075);
+    --dark: rgb(255, 255, 255);
+    --dark100: rgba(255, 255, 255, .6);
+    --dark200: rgba(255, 255, 255, .4);
+    --dark300: rgba(255, 255, 255, .15);
+    --dark400: rgba(255, 255, 255, .075);
     --light-s-300: #d9d9d9;
     --light-s-400: #ececec;
 }
-
-
 
 
 /* Typefaces */
@@ -124,9 +118,8 @@
 }
 
 
-
-
 /* Components */
+
 
 /* Button */
 
@@ -149,12 +142,14 @@
     fill: var(--light);
 }
 
-.primary-button-icon:hover, .secondary-button:hover {
+.primary-button-icon:hover,
+.secondary-button:hover {
     background-color: var(--light300);
     border-color: var(--light300);
 }
 
-.primary-button-icon:active, .secondary-button:active {
+.primary-button-icon:active,
+.secondary-button:active {
     background-color: var(--light200);
     border-color: var(--light200);
 }
@@ -208,24 +203,25 @@
 /* END Components */
 
 
-
-
 /* Main CSS */
 
 * {
     margin: 0;
     padding: 0;
     -webkit-box-sizing: border-box;
-            box-sizing: border-box;
+    box-sizing: border-box;
     -webkit-tap-highlight-color: transparent;
-    transition: 0.3s ease-in-out;
 }
 
-*:focus, *:focus-within, *:focus-visible, *:active{
+*:focus,
+*:focus-within,
+*:focus-visible,
+*:active {
     outline: none;
 }
 
-ul, li {
+ul,
+li {
     list-style-type: none;
 }
 
@@ -249,7 +245,8 @@ html {
     line-height: 1.6;
 }
 
-html, body {
+html,
+body {
     width: 100%;
     height: 100%;
     overflow: hidden;
@@ -264,6 +261,7 @@ html, body {
     overflow-x: hidden;
     scroll-behavior: smooth;
     position: relative;
+    transition: background-color .2s ease-in-out;
 }
 
 .app {
@@ -278,7 +276,8 @@ html, body {
     margin: 0 auto;
 }
 
-.container, .footer {
+.container,
+.footer {
     width: 100%;
     max-width: 800px;
 }
@@ -287,8 +286,6 @@ html, body {
     box-shadow: 0 0 0 4px var(--blue100);
     border-radius: 32px;
 }
-
-
 
 
 /* Header */
@@ -311,7 +308,7 @@ html, body {
     margin-top: 24px;
 }
 
-.theme > * {
+.theme>* {
     display: none;
     flex-direction: row;
     align-items: center;
@@ -378,8 +375,6 @@ html, body {
 }
 
 
-
-
 /* Personal Info */
 
 .personal-info {
@@ -390,11 +385,11 @@ html, body {
 }
 
 
-
-
 /* Experience, Education, Certificates*/
 
-.experience, .education, .certificates {
+.experience,
+.education,
+.certificates {
     display: flex;
     flex-direction: column;
     row-gap: 8px;
@@ -426,8 +421,6 @@ html, body {
 }
 
 
-
-
 /* Skills */
 
 .skills {
@@ -448,8 +441,6 @@ html, body {
 .skills p {
     color: var(--light200);
 }
-
-
 
 
 /* Projects */
@@ -549,7 +540,7 @@ html, body {
     width: max-content;
 }
 
-.link-to-project > * {
+.link-to-project>* {
     transition: 0.2s ease-in-out;
 }
 
@@ -559,7 +550,6 @@ html, body {
     border-radius: 32px;
     padding: 8px;
 }
-
 
 .link-to-project svg {
     width: 12px;
@@ -572,7 +562,8 @@ html, body {
     text-decoration: underline;
 }
 
-.link-to-project a:hover + svg, .link-to-project a:focus + svg {
+.link-to-project a:hover+svg,
+.link-to-project a:focus+svg {
     opacity: 1;
 }
 
@@ -584,8 +575,6 @@ html, body {
 .open-project .details {
     display: flex;
 }
-
-
 
 
 /* Navigation */
@@ -621,49 +610,40 @@ html, body {
 
 .nav-list-item {
     width: 100%;
-}
-
-.nav-list-item a {
-    width: 100%;
-    height: 100%;
     padding: 20px;
     color: var(--light200);
     border-radius: 64px;
     border: 2px solid transparent;
     transition: 0.3s ease-in-out;
+    cursor: pointer;
 }
 
-.nav-list-item.active a {
+.nav-list-item.active {
     background-color: var(--light400);
     border-color: var(--light400);
-}
-
-.nav-list-item.active a {
     color: var(--light);
 }
 
-.nav-list-item a:hover {
+.nav-list-item:hover {
     background-color: var(--light400);
     color: var(--light);
     border-color: var(--light400);
 }
 
-.nav-list-item a:active {
+.nav-list-item:active {
     background-color: var(--light300);
     border-color: var(--light300);
 }
 
-.nav-list-item.active a:hover {
+.nav-list-item.active:hover {
     background-color: var(--light300);
     border-color: var(--light300);
 }
 
-.nav-list-item.active a:active {
+.nav-list-item.active:active {
     background-color: var(--light200);
     border-color: var(--light200);
 }
-
-
 
 
 /* Footer */
@@ -711,24 +691,16 @@ html, body {
 }
 
 
-
-
 /* Responsive */
 
 @media screen and (max-width: 1600px) {
-    :root {
+     :root {
         --space-big: 24px;
     }
-
     .container {
         padding: 0 16px;
     }
-
-
-
-
     /* Navigation */
-
     .nav-container {
         position: sticky;
         top: 8px;
@@ -743,7 +715,6 @@ html, body {
         margin-left: 0;
         margin-bottom: 64px;
     }
-
     .nav {
         display: flex;
         flex-direction: column;
@@ -757,7 +728,6 @@ html, body {
         background-color: transparent;
         transition: none;
     }
-
     .nav-header {
         display: flex;
         flex-direction: row;
@@ -773,16 +743,13 @@ html, body {
         cursor: pointer;
         color: var(--light);
     }
-
     .nav-header:hover {
         background-color: var(--light-s-300);
         border-color: var(--light300);
     }
-
-    .nav-header > * {
+    .nav-header>* {
         pointer-events: none;
     }
-
     .nav-header .test {
         display: flex;
         flex-direction: row;
@@ -790,7 +757,6 @@ html, body {
         align-items: center;
         width: 100%;
     }
-
     .hotkeys div {
         display: flex;
         flex-direction: row;
@@ -799,117 +765,86 @@ html, body {
         color: var(--light200);
         text-align: right;
     }
-
     .slash {
         margin-bottom: 4px;
     }
-
-    .hotkeys div > * {
+    .hotkeys div>* {
         display: inline-block;
     }
-
     .hotkeys svg {
         fill: var(--light200);
         width: 14px;
         height: 14px;
     }
-
     .slash svg {
         width: 16px;
         height: 16px;
     }
-
     .nav-header .arrow {
         width: 24px;
         height: 24px;
     }
-
     .nav-header .arrow svg {
         fill: var(--light);
         width: 100%;
         height: 100%;
         transition: 0.3s ease-in-out;
     }
-
     .nav .nav-list {
         display: none;
     }
-
     .nav:focus-within {
         background-color: var(--light-s-400);
         border-color: var(--light400);
     }
-
     .nav:focus-within .arrow svg {
         transform: rotate(180deg);
     }
-
     .nav:focus-within .nav-list {
         display: flex;
     }
 }
 
-
-
 @media screen and (max-width: 600px) {
-    :root {
+     :root {
         --space-big: 12px;
     }
-
     .container {
         padding: 0 8px;
         row-gap: 40px;
     }
-
     .section {
         row-gap: 24px;
     }
-
     .section-title {
         padding: 8px;
     }
-
     .f-display {
         font-size: 2rem;
     }
-
     .f-header {
         font-size: 1.4rem;
     }
-
-
     .primary-button-icon {
         padding: 8px;
         column-gap: 4px;
     }
-
     .primary-button-icon svg {
         width: 16px;
         height: 16px;
     }
-
     .secondary-button {
         padding: 8px;
     }
-
-
-
-
-
-
     .skills .entry {
         min-width: 150px;
     }
-
     .skills h3 {
         padding: 8px;
     }
-
-
     .project-header .info {
         row-gap: 8px;
     }
-
     .project .arrow {
         width: 28px;
         height: 28px;
@@ -917,68 +852,51 @@ html, body {
         min-height: 28px;
         padding: 4px;
     }
-
     .project .details {
         row-gap: 16px;
     }
-
-
-
+    .link-to-project svg {
+        opacity: 1;
+        width: 10px;
+        height: 10px;
+    }
     .nav {
         padding: 8px;
     }
-
     .nav-header {
         padding: 12px;
     }
-
-    .nav-list-item a {
+    .nav-list-item {
         padding: 12px;
     }
-
     .hotkeys {
         display: none;
     }
-
-
     .header {
         row-gap: 32px;
     }
-
     .header-buttons {
         margin-top: 8px;
         column-gap: 8px;
     }
-
     .profile-pic {
         width: 64px;
         height: 64px;
     }
-
     .nickname {
         padding: 8px;
     }
-
-
     .personal-info {
         flex-direction: column;
         row-gap: 8px;
     }
-
-
     .entry {
         row-gap: 8px;
     }
-
-
-
     .skills {
         column-gap: 8px;
         overflow-y: auto;
     }
-
-
-
     .footer {
         padding: 40px 0;
         margin-top: 32px;
