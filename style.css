@@ -1,5 +1,5 @@
 :root {
-    --font-heading: 'Oi', sans-serif;
+    --font-heading: 'Changa One', sans-serif;
     --font-paragraph: 'Source Code Pro', sans-serif;
     --blue: rgb(44, 117, 255);
     --blue100: rgba(44, 117, 255, .4);
@@ -8,11 +8,11 @@
 }
 
 .dark {
-    --dark: rgb(20, 20, 20);
-    --dark100: rgba(0, 0, 0, .6);
-    --dark200: rgba(0, 0, 0, .4);
-    --dark300: rgba(0, 0, 0, .15);
-    --dark400: rgba(0, 0, 0, .075);
+    --dark: rgb(10, 10, 10);
+    --dark100: rgba(10, 10, 10, .6);
+    --dark200: rgba(10, 10, 10, .4);
+    --dark300: rgba(10, 10, 10, .15);
+    --dark400: rgba(10, 10, 10, .075);
     --light: rgb(255, 255, 255);
     --light100: rgba(255, 255, 255, .6);
     --light200: rgba(255, 255, 255, .4);
@@ -24,10 +24,10 @@
 
 .light {
     --light: rgb(20, 20, 20);
-    --light100: rgba(0, 0, 0, .6);
-    --light200: rgba(0, 0, 0, .4);
-    --light300: rgba(0, 0, 0, .15);
-    --light400: rgba(0, 0, 0, .075);
+    --light100: rgba(10, 10, 10, .6);
+    --light200: rgba(10, 10, 10, .4);
+    --light300: rgba(10, 10, 10, .15);
+    --light400: rgba(10, 10, 10, .075);
     --dark: rgb(255, 255, 255);
     --dark100: rgba(255, 255, 255, .6);
     --dark200: rgba(255, 255, 255, .4);
@@ -42,7 +42,7 @@
 
 .f-display {
     font-family: var(--font-heading);
-    font-size: 3rem;
+    font-size: 5rem;
     font-weight: normal;
     line-height: 1.4;
 }
@@ -295,7 +295,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    row-gap: 54px;
+    row-gap: 48px;
 }
 
 .header-buttons {
@@ -352,12 +352,14 @@ body {
     padding: 8px;
     border-radius: 50%;
     border: 2px solid transparent;
+    transition: .2s ease;
 }
 
 .social-profiles svg {
     width: 100%;
     height: 100%;
     fill: var(--light100);
+    transition: .2s ease;
 }
 
 .social-profiles a:hover {
@@ -505,7 +507,7 @@ body {
     transition: 0.3s ease-in-out;
 }
 
-.open .arrow svg {
+.open-project .arrow svg {
     transform: rotate(180deg);
 }
 
@@ -656,7 +658,7 @@ body {
     flex-direction: column;
     align-items: center;
     row-gap: 24px;
-    padding: 104px 8px;
+    padding: 40px 8px;
 }
 
 .view-project-github {
@@ -674,14 +676,15 @@ body {
     color: var(--light200);
 }
 
-.shout-out a {
+.shout-out span {
     display: inline;
     color: var(--light);
 }
 
-.shout-out a:hover {
+
+/* .shout-out a:hover {
     text-decoration: underline;
-}
+} */
 
 .circle {
     width: 3px;
