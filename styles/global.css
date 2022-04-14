@@ -1,188 +1,200 @@
 :root {
-    --font-primary: 'Commissioner', sans-serif;
-    --font-secondary: 'Cormorant Infant', sans-serif;
-    --blue: rgb(44, 117, 255);
-    --blue100: rgba(44, 117, 255, .4);
-    --blue200: rgba(44, 117, 255, .1);
-    --dark: rgb(0, 0, 0);
-    --dark100: rgba(0, 0, 0, .6);
-    --dark200: rgba(0, 0, 0, .4);
-    --dark300: rgba(0, 0, 0, .15);
-    --dark400: rgba(0, 0, 0, .075);
-    --light: rgb(255, 255, 255);
-    --light100: rgba(255, 255, 255, .6);
-    --light200: rgba(255, 255, 255, .4);
-    --light300: rgba(255, 255, 255, .15);
-    --light400: rgba(255, 255, 255, .075);
-    --light-s-300: #262626;
-    --light-s-400: #131313;
-  }
-  
-  
-  /* Typefaces */
-  
-  .f-display {
-    font-family: var(--font-primary);
-    font-size: 3.4rem;
-    font-weight: 900;
-    line-height: 1.1;
-  }
-  
-  .f-header {
-    font-family: var(--font-secondary);
-    font-size: 1.8rem;
-    font-weight: 500;
-  }
-  
-  .f-header-1 {
-    font-family: var(--font-secondary);
-    font-size: 1.8rem;
-    font-weight: 500;
-  }
-  
-  .f-section {
-    font-family: var(--font-secondary);
-    font-size: 1rem;
-    font-weight: 700;
-  }
-  
-  .f-title {
-    font-family: var(--font-secondary);
-    font-size: 1rem;
-    font-weight: 500;
-  }
-  
-  .f-nav {
-    font-family: var(--font-primary);
-    font-size: .9rem;
-    font-weight: 400;
-  }
-  
-  .f-nav-2 {
-    font-family: var(--font-secondary);
-    font-size: 1.1rem;
-    font-weight: 400;
-  }
-  
-  .f-paragraph-1 {
-    font-family: var(--font-secondary);
-    font-size: 1rem;
-    font-weight: 500;
-  }
-  
-  .f-paragraph-2 {
-    font-family: var(--font-secondary);
-    font-size: .9rem;
-    font-weight: 500;
-  }
-  
-  .f-paragraph-2-bold {
-    font-family: var(--font-secondary);
-    font-size: .9rem;
-    font-weight: 700;
-  }
-  
-  .f-paragraph-3 {
-    font-family: var(--font-secondary);
-    font-size: .8rem;
-    font-weight: 500;
-    line-height: 1;
-  }
-  
-  .f-paragraph-3-bold {
-    font-family: var(--font-secondary);
-    font-size: .8rem;
-    font-weight: 700;
-    line-height: 1;
-  }
-  
-  .f-paragraph-4 {
-    font-family: var(--font-secondary);
-    font-size: .9rem;
-    font-weight: 400;
-  }
-  
-  
-  /* Components */
-  
-  
-  /* END Components */
-  
-  
-  /* Main CSS */
-  
-  * {
-    margin: 0;
-    padding: 0;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-    -webkit-tap-highlight-color: transparent;
-  }
-  
-  *:focus,
-  *:focus-within,
-  *:focus-visible,
-  *:active {
-    outline: none;
-  }
-  
-  ul,
-  li {
-    list-style-type: none;
-  }
-  
-  button {
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-    user-select: none;
-  }
-  
-  a {
-    text-decoration: none;
-    cursor: pointer;
-    display: block;
-    user-select: none;
-    color: var(--light);
-  }
-  
-  html {
-    font-size: clamp(12px, 2vw, 16px);
-    line-height: 1.6;
-  }
-  
-  html,
-  body {
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-  }
-  
-  .root {
-    width: 100%;
-    height: 100%;
-    background-color: var(--dark);
-    color: var(--light);
-    overflow-y: auto;
-    overflow-x: hidden;
-    scroll-behavior: smooth;
-    position: relative;
-    transition: background-color .2s ease-in-out;
-  }
-  
-  .app {
-    width: 100%;
-    height: auto;
-  }
-  
-  .container {}
-  
-  .container,
-  .footer {
-    width: 100%;
-  }
-  
-  [tabindex="0"]:focus-visible {
-    box-shadow: 0 0 0 4px var(--blue100);
-    border-radius: 32px;
-  }
+  --font-primary: 'Commissioner', sans-serif;
+  --font-secondary: 'Cormorant Infant', sans-serif;
+  --blue: rgb(44, 117, 255);
+  --blue100: rgba(44, 117, 255, .4);
+  --blue200: rgba(44, 117, 255, .1);
+  --dark: rgb(0, 0, 0);
+  --dark100: rgba(0, 0, 0, .6);
+  --dark200: rgba(0, 0, 0, .4);
+  --dark300: rgba(0, 0, 0, .15);
+  --dark400: rgba(0, 0, 0, .075);
+  --light: rgb(255, 255, 255);
+  --light100: rgba(255, 255, 255, .6);
+  --light200: rgba(255, 255, 255, .4);
+  --light300: rgba(255, 255, 255, .15);
+  --light400: rgba(255, 255, 255, .075);
+  --light-s-300: #262626;
+  --light-s-400: #131313;
+}
+
+
+/* Typefaces */
+
+.f-display {
+  font-family: var(--font-primary);
+  font-size: 3.4rem;
+  font-weight: 900;
+  line-height: 1.1;
+}
+
+.f-header-1 {
+  font-family: var(--font-primary);
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.f-header-alt-1 {
+  font-family: var(--font-secondary);
+  font-size: 1.8rem;
+  font-weight: 500;
+}
+
+.f-header-alt-2 {
+  font-family: var(--font-secondary);
+  font-size: 1.6rem;
+  font-weight: 400;
+}
+
+.f-subtitle {
+  font-family: var(--font-primary);
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+
+.f-subtitle-alt {
+  font-family: var(--font-secondary);
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.f-title {
+  font-family: var(--font-secondary);
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.f-nav {
+  font-family: var(--font-primary);
+  font-size: .9rem;
+  font-weight: 400;
+}
+
+.f-nav-2 {
+  font-family: var(--font-secondary);
+  font-size: 1.1rem;
+  font-weight: 400;
+}
+
+.f-paragraph-1 {
+  font-family: var(--font-primary);
+  font-size: 1.125rem;
+  font-weight: 400;
+}
+
+.f-paragraph-2 {
+  font-family: var(--font-secondary);
+  font-size: .9rem;
+  font-weight: 500;
+}
+
+.f-paragraph-2-bold {
+  font-family: var(--font-secondary);
+  font-size: .9rem;
+  font-weight: 700;
+}
+
+.f-paragraph-3 {
+  font-family: var(--font-secondary);
+  font-size: .8rem;
+  font-weight: 500;
+  line-height: 1;
+}
+
+.f-paragraph-3-bold {
+  font-family: var(--font-secondary);
+  font-size: .8rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.f-paragraph-4 {
+  font-family: var(--font-secondary);
+  font-size: .9rem;
+  font-weight: 400;
+}
+
+.f-button {
+  font-family: var(--font-primary);
+  font-size: .9rem;
+  font-weight: 500;
+}
+
+
+/* Components */
+
+
+/* END Components */
+
+
+/* Main CSS */
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+*:focus,
+*:focus-within,
+*:focus-visible,
+*:active {
+  outline: none;
+}
+
+ul,
+li {
+  list-style-type: none;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  user-select: none;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+  display: block;
+  user-select: none;
+  color: var(--light);
+}
+
+html {
+  font-size: clamp(12px, 2vw, 16px);
+  line-height: 1.6;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.root {
+  width: 100%;
+  height: 100%;
+  background-color: var(--dark);
+  color: var(--light);
+  overflow: hidden;
+  scroll-behavior: smooth;
+  position: relative;
+  transition: background-color .2s ease-in-out;
+}
+
+.app {
+  width: 100%;
+  max-width: 2000px;
+  height: auto;
+  margin: auto;
+}
+
+[tabindex="0"]:focus-visible {
+  box-shadow: 0 0 0 4px var(--blue100);
+  border-radius: 32px;
+}
