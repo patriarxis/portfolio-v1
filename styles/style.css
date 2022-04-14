@@ -326,10 +326,6 @@ body {
   margin-top: auto;
 }
 
-.view-project-github {
-  color: var(--light);
-}
-
 .copyrights {
   color: var(--light300);
   margin-bottom: 24px;
