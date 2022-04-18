@@ -23,7 +23,7 @@
 
 .f-display {
   font-family: var(--font-primary);
-  font-size: 3.4rem;
+  font-size: 3rem;
   font-weight: 900;
   line-height: 1.1;
 }
@@ -78,38 +78,30 @@
 
 .f-paragraph-1 {
   font-family: var(--font-primary);
-  font-size: 1.125rem;
+  font-size: 1.4rem;
   font-weight: 400;
 }
 
 .f-paragraph-2 {
-  font-family: var(--font-secondary);
-  font-size: .9rem;
-  font-weight: 500;
+  font-family: var(--font-primary);
+  font-size: 1.125rem;
+  font-weight: 400;
 }
 
-.f-paragraph-2-bold {
-  font-family: var(--font-secondary);
-  font-size: .9rem;
-  font-weight: 700;
+.f-paragraph-2-medium {
+  font-family: var(--font-primary);
+  font-size: 1.125rem;
+  font-weight: 500;
 }
 
 .f-paragraph-3 {
-  font-family: var(--font-secondary);
-  font-size: .8rem;
-  font-weight: 500;
-  line-height: 1;
-}
-
-.f-paragraph-3-bold {
-  font-family: var(--font-secondary);
-  font-size: .8rem;
-  font-weight: 700;
-  line-height: 1;
+  font-family: var(--font-primary);
+  font-size: 1rem;
+  font-weight: 400;
 }
 
 .f-paragraph-4 {
-  font-family: var(--font-secondary);
+  font-family: var(--font-primary);
   font-size: .9rem;
   font-weight: 400;
 }
@@ -166,7 +158,7 @@ a {
 
 html {
   font-size: clamp(12px, 2vw, 16px);
-  line-height: 1.6;
+  line-height: 1.4;
 }
 
 html,

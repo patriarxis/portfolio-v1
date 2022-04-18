@@ -1,0 +1,58 @@
+/* Bio */
+
+.bio {
+  display: flex;
+  flex-direction: column;
+  row-gap: 54px;
+  width: 100%;
+  max-width: 650px;
+  margin: auto;
+}
+
+.top {
+  text-align: center;
+}
+
+.top > *+* {
+  margin-top: 16px;
+}
+
+.profile-pic {
+  width: 140px;
+  height: 140px;
+  border: 2px solid var(--light400);
+  border-radius: 50%;
+}
+
+.profile {
+  color: var(--light100);
+}
+
+.profile>*+*{
+  margin-top: 24px;
+}
+
+.sections {
+  display: flex;
+  flex-direction: row;
+  overflow-x: auto;
+}
+
+.col>li {
+  padding: 24px;
+  border-radius: 16px;
+  transition: .15s ease;
+}
+
+.col>li:hover {
+  background-color: var(--light400);
+}
+
+.col>li>span::after {
+  content: "";
+  display: block;
+  width: 3px;
+  height: 3px;
+  background-color: var(--light);
+  border-radius: 50%;
+}
