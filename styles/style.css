@@ -3,24 +3,23 @@
 .header {
   width: 100%;
   max-width: 300px;
-  height: 100vh;
+  height: calc(100vh - 32px);
   display: flex;
   flex-direction: column;
-  row-gap: 36px;
-  margin-left: 15%;
+  row-gap: 32px;
+  margin: 16px;
+  padding: 32px;
   user-select: none;
+  background-color: var(--light400);
+  border-radius: 16px;
+  overflow: auto;
 }
 
 .profile-pic-nav {
-  width: 60px;
-  height: 60px;
+  width: 48px;
+  height: 48px;
   border: 2px solid var(--light400);
   border-radius: 50%;
-  margin-top: 54px;
-}
-
-.job-title {
-  color: var(--light100);
 }
 
 
@@ -42,7 +41,6 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-  row-gap: 10px;
 }
 
 .nav-list li {
@@ -50,14 +48,17 @@
 }
 
 .nav-list-item {
-  width: max-content;
+  width: 140px;
   color: var(--light200);
   transition: .1s ease-in-out;
   cursor: pointer;
+  padding: 16px;
+  border-radius: 8px;
 }
 
 .active-nav {
   color: var(--light);
+  background-color: var(--light400);
 }
 
 .projects-list {
@@ -70,6 +71,13 @@
 
 .nav-list-item:hover {
   color: var(--light);
+  background-color: var(--light400);
+}
+
+.nav-list-item:focus {
+  box-shadow: 0 0 0 2px var(--blue);
+  color: var(--light);
+  background-color: var(--light400);
 }
 
 .featured {
@@ -80,7 +88,7 @@
   display: block;
   content: "Featured";
   position: absolute;
-  left: 120%;
+  left: 50%;
   top: 50%;
   transform: translateY(-50%);
   color: var(--blue);
@@ -126,8 +134,7 @@
 }
 
 .copyrights {
-  color: var(--light300);
-  margin-bottom: 24px;
+  color: var(--light200);
 }
 
 /* Container */
@@ -145,4 +152,68 @@
   padding: 64px;
   padding-top: 240px;
   overflow-y: auto;
+}
+
+
+@media only screen and (max-width: 1000px) {
+  .header {
+    background-color: transparent;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0;
+    padding: 0;
+  }
+
+  .name {
+    position: fixed;
+    top: 8px;
+    text-align: center;
+    left: 0;
+    right: 0;
+  }
+
+  .profile-pic-nav {
+    position: absolute;
+    left: 8px;
+    top: 8px;
+    width: 40px;
+    height: 40px;
+  }
+
+  .nav {
+    position: fixed;
+    bottom: 8px;
+    left: 8px;
+    right: 8px;
+    width: calc(100vw - 16px);
+    padding: 8px;
+    max-width: 200px;
+    background-color: var(--light400);
+    border-radius: 8px;
+    margin: auto;
+  }
+
+  .nav-list {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  .projects-list {
+    display: none;
+  }
+
+  .nav-list-item {
+    width: auto;
+    padding: 8px;
+  }
+
+  .social-profiles {
+    display: none;
+  }
+
+  .footer {
+    display: none;
+  }
 }

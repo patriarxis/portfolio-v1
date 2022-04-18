@@ -12,8 +12,8 @@
   --light: rgb(255, 255, 255);
   --light100: rgba(255, 255, 255, .6);
   --light200: rgba(255, 255, 255, .4);
-  --light300: rgba(255, 255, 255, .15);
-  --light400: rgba(255, 255, 255, .075);
+  --light300: rgba(255, 255, 255, .10);
+  --light400: rgba(255, 255, 255, .05);
   --light-s-300: #262626;
   --light-s-400: #131313;
 }
@@ -23,7 +23,7 @@
 
 .f-display {
   font-family: var(--font-primary);
-  font-size: 3rem;
+  font-size: 2rem;
   font-weight: 900;
   line-height: 1.1;
 }
@@ -66,13 +66,13 @@
 
 .f-nav {
   font-family: var(--font-primary);
-  font-size: .9rem;
+  font-size: .875rem;
   font-weight: 400;
 }
 
 .f-nav-2 {
   font-family: var(--font-secondary);
-  font-size: 1.1rem;
+  font-size: 1.125rem;
   font-weight: 400;
 }
 
@@ -102,6 +102,12 @@
 
 .f-paragraph-4 {
   font-family: var(--font-primary);
+  font-size: .9rem;
+  font-weight: 400;
+}
+
+.f-paragraph-alt-4 {
+  font-family: var(--font-secondary);
   font-size: .9rem;
   font-weight: 400;
 }
@@ -181,12 +187,10 @@ body {
 
 .app {
   width: 100%;
-  max-width: 2000px;
   height: auto;
   margin: auto;
 }
 
 [tabindex="0"]:focus-visible {
-  box-shadow: 0 0 0 4px var(--blue100);
-  border-radius: 32px;
+  box-shadow: 0 0 0 2px var(--blue);
 }
