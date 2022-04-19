@@ -30,38 +30,32 @@
 
 .f-header-1 {
   font-family: var(--font-primary);
-  font-size: 1.8rem;
-  font-weight: 700;
+  font-size: 2.25rem;
+  font-weight: 800;
+}
+
+.f-header-2 {
+  font-family: var(--font-primary);
+  font-size: 1.25rem;
+  font-weight: 600;
 }
 
 .f-header-alt-1 {
   font-family: var(--font-secondary);
-  font-size: 1.8rem;
-  font-weight: 500;
+  font-size: 2.25rem;
+  font-weight: 400;
 }
 
 .f-header-alt-2 {
   font-family: var(--font-secondary);
-  font-size: 1.6rem;
+  font-size: 1.75rem;
   font-weight: 400;
 }
 
-.f-subtitle {
-  font-family: var(--font-primary);
-  font-size: 1.2rem;
+.f-header-alt-3 {
+  font-family: var(--font-secondary);
+  font-size: 1.25rem;
   font-weight: 400;
-}
-
-.f-subtitle-alt {
-  font-family: var(--font-secondary);
-  font-size: 1.2rem;
-  font-weight: 500;
-}
-
-.f-title {
-  font-family: var(--font-secondary);
-  font-size: 1.2rem;
-  font-weight: 500;
 }
 
 .f-nav {
@@ -78,7 +72,7 @@
 
 .f-paragraph-1 {
   font-family: var(--font-primary);
-  font-size: 1.4rem;
+  font-size: 1.25rem;
   font-weight: 400;
 }
 
@@ -100,22 +94,28 @@
   font-weight: 400;
 }
 
+.f-paragraph-3-medium {
+  font-family: var(--font-primary);
+  font-size: 1rem;
+  font-weight: 500;
+}
+
 .f-paragraph-4 {
   font-family: var(--font-primary);
   font-size: .9rem;
-  font-weight: 400;
+  font-weight: 500;
 }
 
-.f-paragraph-alt-4 {
+.f-paragraph-alt-1 {
+  font-family: var(--font-secondary);
+  font-size: 1.125rem;
+  font-weight: 500;
+}
+
+.f-paragraph-alt-2 {
   font-family: var(--font-secondary);
   font-size: .9rem;
   font-weight: 400;
-}
-
-.f-button {
-  font-family: var(--font-primary);
-  font-size: .9rem;
-  font-weight: 500;
 }
 
 
@@ -133,6 +133,15 @@
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   -webkit-tap-highlight-color: transparent;
+  scrollbar-color: var(--light300) var(--dark);
+}
+
+::-webkit-scrollbar {
+  background-color: var(--dark);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--light300);
 }
 
 *:focus,
@@ -172,6 +181,7 @@ body {
   width: 100%;
   height: 100%;
   overflow: hidden;
+  user-select: none;
 }
 
 .root {

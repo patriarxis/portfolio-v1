@@ -5,54 +5,177 @@
   flex-direction: column;
   row-gap: 54px;
   width: 100%;
-  max-width: 650px;
+  max-width: 800px;
   margin: auto;
 }
 
-.top {
-  text-align: center;
+.job-title {
+  margin: auto;
 }
 
-.top > *+* {
-  margin-top: 16px;
-}
-
-.profile-pic {
-  width: 140px;
-  height: 140px;
-  border: 2px solid var(--light400);
-  border-radius: 50%;
-}
-
-.profile {
-  color: var(--light100);
-}
-
-.profile>*+*{
+.profile>*+* {
   margin-top: 24px;
+}
+
+.profile div {
+  display: flex;
+  flex-direction: row;
+  column-gap: 16px;
+}
+
+.profile .profile-intro {
+  color: var(--light);
+}
+
+.profile .profile-columns {
+  color: var(--light200);
+}
+
+.contact {
+  display: flex;
+  flex-direction: column;
+  row-gap: 16px;
+}
+
+.contact .email {
+  width: max-content;
+  color: var(--light);
+  border-radius: 4px;
+  transition: .1s ease;
+}
+
+.contact .email:hover {
+ color: var(--blue);
+ text-decoration: underline;
+}
+
+.contact .address, .contact .military-service {
+  color: var(--light200);
 }
 
 .sections {
   display: flex;
+  flex-direction: column;
+  row-gap: 64px;
+}
+
+.sections>li {
+  display: flex;
+  flex-direction: column;
+  row-gap: 16px;
+}
+
+.sections>li>h2::after {
+  content: "";
+  display: block;
+  width: 4px;
+  height: 4px;
+  background-color: var(--light);
+  border-radius: 50%;
+}
+
+.experience, .education, .projects {
+  display: flex;
+  flex-direction: column;
+  row-gap: 16px;
+}
+
+.certificates {
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.graphic-design>ul {
+  display: flex;
+  flex-direction: column;
+  row-gap: 16px;
+}
+
+.skills {
+  display: flex;
   flex-direction: row;
-  overflow-x: auto;
+  column-gap: 24px;
+  align-items: flex-start;
 }
 
-.col>li {
+.skills>ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  max-width: 300px;
+  align-items: flex-start;
+}
+
+.skills>ul>li {
+  padding: 8px 16px;
+  background-color: var(--light400);
+  box-shadow: inset 0 0 0 2px var(--light400);
+  border-radius: 32px;
+  transition: .1s ease;
+}
+
+.skills>ul>li:hover {
+  background-color: var(--light300);
+}
+
+.box {
+  display: flex;
+  flex-direction: column;
+  row-gap: 16px;
   padding: 24px;
+  width: 300px;
+  background-color: var(--light400);
   border-radius: 16px;
-  transition: .15s ease;
+  transition: .1s ease;
 }
 
-.col>li:hover {
+.projects .box {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  column-gap: 24px;
+  align-items: center;
+}
+
+.projects .box .details {
+  display: flex;
+  flex-direction: column;
+  row-gap: 8px;
+}
+
+.project-image {
+  aspect-ratio: 3 / 4;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 8px;
   background-color: var(--light400);
 }
 
-.col>li>span::after {
-  content: "";
-  display: block;
-  width: 3px;
-  height: 3px;
-  background-color: var(--light);
-  border-radius: 50%;
+.box:hover {
+  background-color: var(--light300);
+}
+
+.box:focus {
+  box-shadow: 0 0 0 2px var(--blue);
+}
+
+.title, .subtitle {
+  color: var(--light);
+}
+
+.date, .link {
+  color: var(--light200);
+}
+
+.link {
+  width: max-content;
+}
+
+.footer-img {
+  width: 56px;
+  height: 56px;
+  filter: saturate(0);
+  margin: auto;
 }
