@@ -204,3 +204,73 @@ body {
 [tabindex="0"]:focus-visible {
   box-shadow: 0 0 0 2px var(--blue);
 }
+
+
+/* Tooltip */
+
+.tooltip {
+  display: none;
+  position: fixed;
+  overflow: hidden;
+  padding: 16px;
+  background-color: var(--light-s-300);
+  box-shadow: 0 4px 10px 0 rgba(0,0,0,.2);
+  border-radius: 8px;
+}
+
+
+/* Display Image */
+
+.display-container {
+  display: none;
+  position: absolute;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--dark100);
+  animation: fadeIn .2s ease;
+  cursor: pointer;
+}
+
+.display {
+  height: max-content;
+  width: max-content;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 24px;
+  background-color: var(--light-s-400);
+  border-radius: 16px;
+  cursor: initial;
+  pointer-events: all;
+}
+
+.display-img {
+  border-radius: 8px;
+}
+
+/* Portrait */
+@media screen and (orientation:portrait) {
+  .display-img {
+    max-width: 70vw;
+  }
+}
+/* Landscape */
+@media screen and (orientation:landscape) {
+  .display-img {
+    max-height: 70vh;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}

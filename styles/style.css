@@ -9,7 +9,6 @@
   row-gap: 32px;
   margin: 16px;
   padding: 32px;
-  user-select: none;
   background-color: var(--light400);
   border-radius: 16px;
   overflow: auto;

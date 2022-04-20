@@ -44,9 +44,9 @@
   transition: .1s ease;
 }
 
-.contact .email:hover {
- color: var(--blue);
- text-decoration: underline;
+.contact .email:hover, .contact .email:focus {
+  color: var(--blue);
+  text-decoration: underline;
 }
 
 .contact .address, .contact .military-service {
@@ -87,7 +87,7 @@
   gap: 16px;
 }
 
-.graphic-design>ul {
+.graphic-design ul {
   display: flex;
   flex-direction: column;
   row-gap: 16px;
@@ -121,6 +121,7 @@
 }
 
 .box {
+  position: relative;
   display: flex;
   flex-direction: column;
   row-gap: 16px;
@@ -131,12 +132,27 @@
   transition: .1s ease;
 }
 
+.gallery {
+  cursor: pointer;
+}
+
+.box .preview-img {
+  position: absolute;
+  bottom: 32px;
+  right: 32px;
+  height: 24px;
+  object-fit: cover;
+  border-radius: 4px;
+  transform: translate(50%, 50%);
+  filter: saturate(0);
+  transition: .1s ease;
+}
+
 .projects .box {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  column-gap: 24px;
-  align-items: center;
+  position: relative;
+  width: calc(100% - 2 * 64px);
+  margin: 0 64px;
+  padding: 24px 64px;
 }
 
 .projects .box .details {
@@ -146,18 +162,32 @@
 }
 
 .project-image {
-  aspect-ratio: 3 / 4;
+  position: absolute;
+  top: 50%;
+  left: 0px;
+  transform: translate(-50%, -50%);
+  aspect-ratio: 5 / 6;
   height: 100px;
   object-fit: cover;
   border-radius: 8px;
   background-color: var(--light400);
+  transition: .1s ease;
+}
+
+.box:hover .project-image {
+  height: 110px;
 }
 
 .box:hover {
   background-color: var(--light300);
 }
 
-.box:focus {
+.box:hover .preview-img {
+  height: 32px;
+  filter: saturate(1);
+}
+
+.focus-box:focus {
   box-shadow: 0 0 0 2px var(--blue);
 }
 
@@ -165,8 +195,21 @@
   color: var(--light);
 }
 
-.date, .link {
+.date, .link, .list {
   color: var(--light200);
+}
+
+.list {
+  transition: .1s ease;
+  border-radius: 12px;
+}
+
+.list:hover {
+  color: var(--light);
+}
+
+.list:focus {
+  box-shadow: 0 0 0 2px var(--blue);
 }
 
 .link {
