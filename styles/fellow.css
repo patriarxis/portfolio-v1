@@ -11,6 +11,12 @@
   color: var(--light200);
 }
 
+.project-header-container {
+  display: flex;
+  flex-direction: column;
+  row-gap: 16px;
+}
+
 .project-header {
   display: flex;
   flex-direction: row;
@@ -18,16 +24,15 @@
   width: 100%;
 }
 
-.title-container {
-  position: relative;
-  width: max-content;
+.project-title {
+  color: var(--light);
 }
 
-.title-container a {
-  position: absolute;
-  left: 110%;
-  top: 50%;
-  transform: translateY(-50%);
+.project-subtitle {
+  color: var(--light200)
+}
+
+.project-links a {
   white-space: nowrap;
   color: var(--blue);
 }
