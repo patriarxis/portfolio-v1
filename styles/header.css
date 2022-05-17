@@ -1,0 +1,137 @@
+/* Header */
+
+.header {
+  width: 100%;
+  max-width: 300px;
+  height: calc(100vh - 32px);
+  display: flex;
+  flex-direction: column;
+  row-gap: 32px;
+  margin: 16px;
+  padding: 32px;
+  background-color: var(--light400);
+  border-radius: 16px;
+  overflow: auto;
+}
+
+.profile-pic-nav {
+  width: 48px;
+  height: 48px;
+  border: 2px solid var(--light400);
+  border-radius: 50%;
+}
+
+
+/* Navigation */
+
+.nav-container {
+  user-select: none;
+}
+
+.nav {
+  width: 100%;
+}
+
+.nav-header {
+  display: none;
+}
+
+.nav-list {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.nav-list li {
+  width: max-content;
+}
+
+.nav-list-item {
+  width: 140px;
+  color: var(--light200);
+  transition: .1s ease-in-out;
+  cursor: pointer;
+  padding: 16px;
+  border-radius: 8px;
+}
+
+.active-nav {
+  color: var(--light);
+  background-color: var(--light400);
+}
+
+.projects-list {
+  margin-left: 16px;
+}
+
+.nav-list-item.active {
+  color: var(--light);
+}
+
+.nav-list-item:hover {
+  color: var(--light);
+  background-color: var(--light400);
+}
+
+.nav-list-item:focus {
+  box-shadow: 0 0 0 2px var(--blue);
+  color: var(--light);
+  background-color: var(--light400);
+}
+
+.featured {
+  position: relative;
+}
+
+.featured::after {
+  display: block;
+  content: "Featured";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--blue);
+  background-color: var(--blue200);
+  font-family: var(--font-primary);
+  font-size: .7rem;
+  font-weight: 500;
+  padding: 2px 4px;
+  border-radius: 4px;
+}
+
+
+/* Social */
+
+.social-profiles {
+  display: flex;
+  flex-direction: row;
+  column-gap: 16px;
+  margin-top: 16px;
+}
+
+.social-profiles a {
+  border-radius: 50%;
+  transition: .2s ease;
+}
+
+.social-profiles svg {
+  width: 20px;
+  height: 20px;
+  fill: var(--light100);
+  transition: .2s ease;
+}
+
+.social-profiles a:hover svg {
+  fill: var(--light);
+}
+
+
+/* Footer */
+
+.footer {
+  margin-top: auto;
+}
+
+.copyrights {
+  color: var(--light200);
+}

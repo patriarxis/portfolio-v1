@@ -211,6 +211,24 @@ body {
   box-shadow: 0 0 0 2px var(--blue);
 }
 
+/* Container */
+
+.container {
+  display: flex;
+  flex-direction: row;
+}
+
+/* Content */
+
+.content {
+  width: 100%;
+  height: 100vh;
+  padding: 64px;
+  padding-top: 240px;
+  overflow-y: auto;
+  color: var(--light);
+}
+
 
 /* Display Image */
 
@@ -251,6 +269,7 @@ body {
     max-width: 70vw;
   }
 }
+
 /* Landscape */
 @media screen and (orientation:landscape) {
   .display-img {
