@@ -40,6 +40,12 @@
   font-weight: 600;
 }
 
+.f-display-alt {
+  font-family: var(--font-secondary);
+  font-size: 3.4rem;
+  font-weight: 400;
+}
+
 .f-header-alt-1 {
   font-family: var(--font-secondary);
   font-size: 2.25rem;
