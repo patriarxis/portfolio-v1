@@ -49,13 +49,13 @@
 .f-header-alt-2 {
   font-family: var(--font-secondary);
   font-size: 1.75rem;
-  font-weight: 400;
+  font-weight: 300;
 }
 
 .f-header-alt-3 {
   font-family: var(--font-secondary);
   font-size: 1.25rem;
-  font-weight: 400;
+  font-weight: 300;
 }
 
 .f-nav {
@@ -109,13 +109,13 @@
 .f-paragraph-alt-1 {
   font-family: var(--font-secondary);
   font-size: 1.125rem;
-  font-weight: 500;
+  font-weight: 400;
 }
 
 .f-paragraph-alt-2 {
   font-family: var(--font-secondary);
   font-size: .9rem;
-  font-weight: 400;
+  font-weight: 300;
 }
 
 
@@ -203,19 +203,6 @@ body {
 
 [tabindex="0"]:focus-visible {
   box-shadow: 0 0 0 2px var(--blue);
-}
-
-
-/* Tooltip */
-
-.tooltip {
-  display: none;
-  position: fixed;
-  overflow: hidden;
-  padding: 16px;
-  background-color: var(--light-s-300);
-  box-shadow: 0 4px 10px 0 rgba(0,0,0,.2);
-  border-radius: 8px;
 }
 
 
