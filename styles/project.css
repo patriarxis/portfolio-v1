@@ -26,7 +26,7 @@
 }
 
 .project-subtitle {
-  color: var(--light200);
+  color: var(--light100);
   margin-top: 4px;
 }
 
@@ -63,7 +63,31 @@
   text-decoration: underline;
 }
 
-.main-text {
+.synopsi {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  margin-top: 32px;
+  gap: 8px;
+  max-width: 600px;
+}
+
+.synopsi>* {
+  align-self: flex-start;
+  padding: 8px 16px;
+  background-color: var(--light400);
+  box-shadow: inset 0 0 0 2px var(--light400);
+  border-radius: 32px;
+  transition: .1s ease;
+  color: var(--light100);
+}
+
+.synopsi>*:hover {
+  background-color: var(--light300);
+  color: var(--light);
+}
+
+span.white {
   color: var(--light);
 }
 
@@ -87,6 +111,7 @@
   aspect-ratio: 9 / 6;
   object-fit: cover;
   border-radius: 8px;
+  box-shadow: 2px 0 10px var(--dark);
 }
 
 .arrow-left-container, .arrow-right-container {
@@ -139,6 +164,7 @@
   height: 66px;
   border-radius: 8px;
   aspect-ratio: 9 / 6;
+  object-fit: cover;
   opacity: .6;
   cursor: pointer;
   transition: .1s ease;
