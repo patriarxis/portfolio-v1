@@ -87,7 +87,7 @@
   display: block;
   content: "Featured";
   position: absolute;
-  left: 50%;
+  left: 57%;
   top: 50%;
   transform: translateY(-50%);
   color: var(--blue);
