@@ -125,12 +125,6 @@
 }
 
 
-/* Components */
-
-
-/* END Components */
-
-
 /* Main CSS */
 
 * {
@@ -178,7 +172,7 @@ a {
 }
 
 html {
-  font-size: clamp(12px, 2vw, 16px);
+  font-size: clamp(12px, 1vw, 16px);
   line-height: 1.4;
 }
 
@@ -223,8 +217,8 @@ body {
 .content {
   width: 100%;
   height: 100vh;
-  padding: 64px;
-  padding-top: 240px;
+  padding: 1em;
+  padding-top: 15em;
   overflow-y: auto;
   color: var(--light);
 }

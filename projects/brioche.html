@@ -22,7 +22,20 @@
   <div class="root">
     <div class="app">
       <div class="container">
-        <section class="header">
+        <section class="mobile-header">
+          <div class="toggle-nav">
+            <svg class="hamburger show-icon" viewBox="0 0 24 24">
+              <path d="M20,6H4A1,1,0,0,0,4,8H20a1,1,0,0,0,0-2Z" />
+              <path d="M16,16H4a1,1,0,0,0,0,2H16a1,1,0,0,0,0-2Z" />
+              <path d="M4,13h8a1,1,0,0,0,0-2H4a1,1,0,0,0,0,2Z" />
+            </svg>
+            <svg class="x" viewBox="0 0 24 24">
+              <path
+                d="M13.41,12l4.95-4.95A1,1,0,1,0,17,5.64l-4.95,5L7.05,5.64A1,1,0,0,0,5.64,7.05l5,5L5.64,17a1,1,0,0,0,0,1.41,1,1,0,0,0,.7.3,1,1,0,0,0,.71-.3l5-4.95L17,18.36a1,1,0,0,0,.71.3,1,1,0,0,0,.7-.3,1,1,0,0,0,0-1.41Z" />
+            </svg>
+          </div>
+        </section>
+        <section class="header close-nav">
 
           <img src="../images/profile-pic.png" alt="" class="profile-pic-nav">
 
@@ -168,6 +181,7 @@
   </div>
 
   <script src="../scripts/carousel.js"></script>
+  <script src="/scripts/header.js"></script>
 
 </body>
 

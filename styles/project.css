@@ -3,7 +3,6 @@
 .project {
   width: 100%;
   max-width: 800px;
-  min-width: 500px;
   margin: auto;
   display: flex;
   flex-direction: column;
@@ -11,7 +10,7 @@
 }
 
 .project>*+* {
-  margin-top: 80px;
+  margin-top: 5em;
 }
 
 .project-header {
@@ -95,7 +94,7 @@ span.white {
   width: 100%;
   background-color: var(--light400);
   border-radius: 16px;
-  padding: 24px;
+  padding: 1.5em;
   display: flex;
   flex-direction: column;
 }
@@ -136,8 +135,8 @@ span.white {
 
 .arrow-left, .arrow-right {
   opacity: 0;
-  width: 32px;
-  height: 32px;
+  width: 2em;
+  height: 2em;
   background-color: var(--dark100);
   border-radius: 50%;
   margin-left: 16px;
@@ -155,8 +154,8 @@ span.white {
 .imgs-list {
   display: flex;
   flex-direction: row;
-  column-gap: 12px;
-  margin-top: 12px;
+  column-gap: .75em;
+  margin-top: .75em;
   overflow: auto;
 }
 
