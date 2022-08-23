@@ -1,0 +1,15 @@
+{
+  "background_color": "black",
+  "description": "Patriarxis personal website",
+  "display": "fullscreen",
+  "icons": [
+    {
+      "src": "images/profile-pic.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ],
+  "name": "Patriarxis",
+  "short_name": "Patriarxis",
+  "start_url": "/my-portfolio/index.html"
+}
