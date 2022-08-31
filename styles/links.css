@@ -4,7 +4,8 @@
   align-items: center;
   height: 100vh;
   padding-inline: 1em;
-  overflow: auto;
+  overflow-y: auto;
+  overflow-x: hidden;
   margin: auto;
   transition: .2s ease-in-out;
 }
