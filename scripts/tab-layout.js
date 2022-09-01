@@ -13,13 +13,18 @@ tabs.forEach(tab => {
 function changeTab(tab) {
   document.querySelector('.active-tab').classList.remove('active-tab');
   tab.classList.add('active-tab');
-  swapLayout();
+  swapLayout(tab);
   updateBg(tab);
 }
 
-function swapLayout() {
-  personalLayout.classList.toggle('hide-personal-layout');
-  professionalLayout.classList.toggle('hide-professional-layout');
+function swapLayout(tab) {
+  if (tab.classList.contains('personal-tab')) {
+    personalLayout.classList.remove('hide-personal-layout');
+    professionalLayout.classList.add('hide-professional-layout');
+  } else {
+    personalLayout.classList.add('hide-personal-layout');
+    professionalLayout.classList.remove('hide-professional-layout');
+  }
 }
 
 function updateBg(tab) {
