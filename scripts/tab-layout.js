@@ -31,3 +31,27 @@ function updateBg(tab) {
   var x = tab.dataset.bgColor;
   document.querySelector('.links-container').style.backgroundColor = x;
 }
+
+var touchstartX = 0;
+var touchendX = 0;
+
+var gesuredZone = document.querySelector('.links-container');
+
+gesuredZone.addEventListener('touchstart', function (event) {
+  touchstartX = event.changedTouches[0].screenX;
+  
+}, false);
+
+gesuredZone.addEventListener('touchend', function (event) {
+  touchendX = event.changedTouches[0].screenX;
+  handleGesure();
+}, false);
+
+function handleGesure() {
+  if (touchendX < touchstartX) {
+    changeTab(personalTab);
+  }
+  if (touchendX > touchstartX) {
+    changeTab(professionalTab);
+  }
+}
