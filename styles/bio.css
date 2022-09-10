@@ -17,6 +17,7 @@
   border-radius: 32px;
   transition: .1s ease;
   color: var(--light100);
+  white-space: nowrap;
 }
 
 .download-cv:hover {
