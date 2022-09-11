@@ -39,7 +39,7 @@ var gesuredZone = document.querySelector('.links-container');
 
 gesuredZone.addEventListener('touchstart', function (event) {
   touchstartX = event.changedTouches[0].screenX;
-  
+
 }, false);
 
 gesuredZone.addEventListener('touchend', function (event) {
@@ -48,10 +48,10 @@ gesuredZone.addEventListener('touchend', function (event) {
 }, false);
 
 function handleGesure() {
-  if (touchendX < touchstartX) {
+  if (touchendX + 100 < touchstartX) {
     changeTab(personalTab);
   }
-  if (touchendX > touchstartX) {
+  if (touchendX - 100 > touchstartX) {
     changeTab(professionalTab);
   }
 }
