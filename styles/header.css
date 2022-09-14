@@ -148,7 +148,7 @@
   .hamburger {
     display: none;
   }
-  
+
   .x {
     display: none;
   }
@@ -163,6 +163,8 @@
     left: 16px;
     z-index: 20;
     padding: 8px;
+    border: 2px solid var(--light300);
+    border-radius: 8px;
   }
 
   .toggle-nav svg {
