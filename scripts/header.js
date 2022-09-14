@@ -9,3 +9,11 @@ toggleNav.addEventListener('click', () => {
   hamburger.classList.toggle('show-icon');
   x.classList.toggle('show-icon');
 })
+
+const documentHeight = () => {
+  const doc = document.documentElement
+  doc.style.setProperty('--doc-height', `${window.innerHeight}px`)
+ }
+ window.addEventListener('resize', documentHeight);
+ documentHeight();
+ 

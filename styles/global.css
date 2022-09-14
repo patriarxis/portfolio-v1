@@ -16,6 +16,7 @@
   --light400: rgba(255, 255, 255, .05);
   --light-s-300: #262626;
   --light-s-400: #131313;
+  --doc-height: 100%;
 }
 
 
@@ -255,6 +256,13 @@ body {
 
 .display-img {
   border-radius: 8px;
+}
+
+@media screen and (max-width: 1200px) {
+  .content {
+    height: var(--doc-height);
+    padding-top: 8em;
+  }
 }
 
 /* Portrait */
