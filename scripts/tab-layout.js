@@ -33,25 +33,38 @@ function updateBg(tab) {
 }
 
 var touchstartX = 0;
+var touchstartY = 0;
 var touchendX = 0;
+var touchendY = 0;
+var motionDirection = '';
 
 var gesuredZone = document.querySelector('.links-container');
 
 gesuredZone.addEventListener('touchstart', function (event) {
   touchstartX = event.changedTouches[0].screenX;
+  touchstartY = event.changedTouches[0].screenY;
 
 }, false);
 
 gesuredZone.addEventListener('touchend', function (event) {
   touchendX = event.changedTouches[0].screenX;
+  touchendY = event.changedTouches[0].screenY;
   handleGesure();
 }, false);
 
 function handleGesure() {
-  if (touchendX + 100 < touchstartX) {
+  if (Math.abs(touchendX - touchstartX) > Math.abs(touchendY - touchstartY)) {
+    motionDirection = 'horizontal';
+    console.log('hr');
+  } else {
+    motionDirection = 'vertical';
+    console.log('vr');
+  }
+
+  if (touchendX + 50 < touchstartX && motionDirection == 'horizontal') {
     changeTab(personalTab);
   }
-  if (touchendX - 100 > touchstartX) {
+  if (touchendX + 50 > touchstartX && motionDirection == 'horizontal') {
     changeTab(professionalTab);
   }
 }
