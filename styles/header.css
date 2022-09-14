@@ -163,8 +163,9 @@
     left: 16px;
     z-index: 20;
     padding: 8px;
-    border: 2px solid var(--light300);
+    border: 2px solid var(--light400);
     border-radius: 8px;
+    background-color: var(--light400);
   }
 
   .toggle-nav svg {
