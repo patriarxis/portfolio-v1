@@ -213,6 +213,10 @@
     text-align: center;
   }
 
+  .nav {
+    margin-block: auto;
+  }
+
   .nav-list {
     align-items: center;
     row-gap: 16px;
@@ -222,7 +226,7 @@
     width: 100%;
     max-width: 18em;
     margin-inline: auto;
-    padding: 24px;
+    padding: 16px;
   }
 
   .projects-list {
