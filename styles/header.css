@@ -6,6 +6,7 @@
 
 .header {
   width: 100%;
+  min-width: 320px;
   max-width: 300px;
   height: calc(100vh - 32px);
   display: flex;
@@ -16,6 +17,7 @@
   background-color: var(--light400);
   border-radius: 16px;
   overflow: auto;
+  user-select: none;
 }
 
 .profile-pic-nav {
@@ -47,7 +49,7 @@
 }
 
 .nav-list li {
-  width: max-content;
+  width: 100%;
 }
 
 .nav-list-item {
@@ -177,14 +179,12 @@
   .close-nav {
     visibility: hidden;
     z-index: -10;
-    user-select: none;
     opacity: 0;
   }
 
   .open-nav {
     visibility: visible;
     z-index: 10;
-    user-select: all;
     opacity: 1;
   }
 
@@ -192,17 +192,48 @@
     position: fixed;
     top: 0;
     left: 0;
-    width: 100vw;
-    height: 100vh;
+    height: var(--doc-height);
     max-width: 100%;
     max-height: 100%;
     margin: 0;
+    padding: 16px;
     background-color: black;
     align-items: center;
     transition: .2s ease-in-out;
+    user-select: none;
+  }
+
+  .profile-pic-nav {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+  }
+
+  .name {
+    text-align: center;
   }
 
   .nav-list {
     align-items: center;
+    row-gap: 16px;
+  }
+
+  .nav-list li a {
+    width: 100%;
+    max-width: 18em;
+    margin-inline: auto;
+    padding: 24px;
+  }
+
+  .projects-list {
+    display: none;
+  }
+
+  .social-profiles {
+    margin-top: auto;
+  }
+
+  .footer {
+    margin-top: 0;
   }
 }

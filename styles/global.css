@@ -198,6 +198,7 @@ body {
 
 .app {
   width: 100%;
+  min-width: 320px;
   height: auto;
   margin: auto;
 }
@@ -259,6 +260,10 @@ body {
 }
 
 @media screen and (max-width: 1200px) {
+  .f-nav {
+    font-size: 1.5rem;
+  }
+  
   .content {
     height: var(--doc-height);
     padding-top: 8em;
