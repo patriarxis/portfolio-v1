@@ -40,10 +40,20 @@ var motionDirection = '';
 
 var gesuredZone = document.querySelector('.links-container');
 
+gesuredZone.addEventListener('mousedown', function (event) {
+  touchstartX = event.offsetX;
+  touchstartY = event.offsetY;
+}, false);
+
+gesuredZone.addEventListener('mouseup', function (event) {
+  touchendX = event.offsetX;
+  touchendY = event.offsetY;
+  handleGesure();
+}, false);
+
 gesuredZone.addEventListener('touchstart', function (event) {
   touchstartX = event.changedTouches[0].screenX;
   touchstartY = event.changedTouches[0].screenY;
-
 }, false);
 
 gesuredZone.addEventListener('touchend', function (event) {
