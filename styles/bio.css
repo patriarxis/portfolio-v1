@@ -170,9 +170,9 @@
 
 .projects .box {
   position: relative;
-  width: calc(100% - 2 * 64px);
-  margin: 0 64px;
-  padding: 24px 64px;
+  width: calc(100% - 64px);
+  margin-left: 64px;
+  padding: 24px 24px 24px 64px;
 }
 
 .projects .box .details {
@@ -242,4 +242,16 @@
   height: 56px;
   filter: saturate(0);
   margin: auto;
+}
+
+
+@media screen and (max-width: 600px) {
+  .skills {
+    flex-direction: column;
+    row-gap: 40px;
+  }
+  
+  .box {
+    width: 100%;
+  }
 }
