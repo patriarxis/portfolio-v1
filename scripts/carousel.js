@@ -6,7 +6,7 @@ let arrowLeft = document.querySelector('.arrow-left-container');
 let arrowRight = document.querySelector('.arrow-right-container');
 let index = 0;
 
-mainImage.src = mockups[0].src;
+mainImage.src = mockups[0].dataset.src;
 
 mockups.forEach(mockup => {
   mockup.addEventListener('mouseover', (e) => {
@@ -32,7 +32,7 @@ document.addEventListener('keydown', (e) => {
 });
 
 function changeMainImage(e) {
-  mainImage.src = e.src;
+  mainImage.src = e.dataset.src;
   changeSelectedClassImage(e);
 }
 
