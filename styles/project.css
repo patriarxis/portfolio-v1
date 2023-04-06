@@ -62,16 +62,19 @@
   text-decoration: underline;
 }
 
-.synopsi {
+.list, .synopsi {
   display: flex;
   flex-wrap: wrap;
   width: 100%;
-  margin-top: 32px;
   gap: 8px;
+}
+
+.synopsi {
+  margin-top: 32px;
   max-width: 600px;
 }
 
-.synopsi>* {
+.list>* {
   align-self: flex-start;
   padding: 8px 16px;
   background-color: var(--light400);
@@ -81,7 +84,7 @@
   color: var(--light100);
 }
 
-.synopsi>*:hover {
+.list>*:hover {
   background-color: var(--light300);
   color: var(--light);
 }
@@ -189,9 +192,4 @@ span.white {
 .hr {
   border-top: 1px solid var(--light300);
   width: 100%;
-}
-
-.footer-logo {
-  width: 56px;
-  align-self: center;
 }
